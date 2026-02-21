@@ -340,7 +340,7 @@ nav {
   text-transform: uppercase; color: var(--saffron); margin-bottom: 10px;
   display: flex; align-items: center; gap: 6px;
 }
-.featured-label::before { content: '⭐'; }
+.featured-label::before { content: '★★★★★'; color: var(--saffron); font-style: normal; font-size: 1rem; letter-spacing: 2px; }
 .featured-quote {
   font-size: 1.08rem; color: var(--text); line-height: 1.7;
   font-style: italic; margin-bottom: 14px;
@@ -355,12 +355,12 @@ nav {
   margin-bottom: 24px; box-shadow: var(--shadow);
 }
 .heat-title { font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 16px; }
-.heat-bar-wrap { position: relative; margin-bottom: 8px; }
+.heat-bar-wrap { position: relative; margin-bottom: 4px; height: 28px; }
 .heat-bar-track {
   height: 12px; border-radius: 6px;
   background: linear-gradient(90deg, #bfdbfe 0%, #fde68a 30%, #fb923c 60%, #ef4444 80%, #7f1d1d 100%);
 }
-.heat-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); }
+.heat-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); margin-top: 28px; }
 .heat-marker {
   position: absolute; top: -4px;
   left: 47%; transform: translateX(-50%);
@@ -372,8 +372,12 @@ nav {
   box-shadow: 0 0 0 3px rgba(232,132,10,0.2);
 }
 .heat-marker-label {
-  margin-top: 6px; font-size: 0.72rem; font-weight: 600;
+  position: absolute; top: 28px;
+  font-size: 0.68rem; font-weight: 600;
   color: var(--saffron); white-space: nowrap;
+  background: var(--bg); padding: 2px 6px;
+  border-radius: 4px; border: 1px solid rgba(232,132,10,0.2);
+  z-index: 2;
 }
 .heat-note {
   font-size: 0.82rem; color: var(--text-muted);
@@ -561,17 +565,48 @@ nav {
 }
 .faq-item.open .faq-a { max-height: 400px; padding: 0 22px 20px; }
 .featured-video {
-  margin-top: 14px;
+  margin-top: 16px;
 }
-.yt-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: #fff0f0; border: 1px solid #fecaca;
-  border-radius: 8px; padding: 8px 16px;
-  color: #dc2626; font-size: 0.84rem; font-weight: 600;
-  text-decoration: none; transition: background 0.2s, border-color 0.2s;
+.yt-thumb-card {
+  display: block; text-decoration: none;
+  border-radius: 12px; overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s, box-shadow 0.2s;
+  max-width: 380px;
+  position: relative;
+  background: #000;
 }
-.yt-link:hover { background: #fee2e2; border-color: #fca5a5; }
-.yt-icon { display: flex; align-items: center; }
+.yt-thumb-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.yt-thumb-img {
+  width: 100%; display: block;
+  aspect-ratio: 16/9; object-fit: cover;
+  opacity: 0.92;
+}
+.yt-thumb-overlay {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.18);
+  transition: background 0.2s;
+}
+.yt-thumb-card:hover .yt-thumb-overlay { background: rgba(0,0,0,0.08); }
+.yt-play-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #FF0000; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 16px rgba(255,0,0,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.yt-thumb-card:hover .yt-play-btn { transform: scale(1.1); box-shadow: 0 6px 24px rgba(255,0,0,0.5); }
+.yt-play-btn svg { margin-left: 4px; }
+.yt-thumb-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 10px 14px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  color: white; font-size: 0.78rem; font-weight: 600;
+  display: flex; align-items: center; gap: 6px;
+}
+.yt-thumb-label svg { flex-shrink: 0; }
 .faq-still {
   margin-top: 32px; padding: 20px 24px;
   background: var(--saffron-light); border: 1px solid rgba(232,132,10,0.25);
@@ -711,9 +746,18 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
   .hero { padding: 40px 16px 60px; }
   .why-grid { grid-template-columns: 1fr; }
   .t-grid { grid-template-columns: 1fr; }
-  .pickup-grid { grid-template-columns: 1fr; }
+  .pickup-grid { grid-template-columns: 1fr !important; }
   nav { padding: 0 16px; }
   .nav-handcrafted { display: none; }
+  /* Mobile: hero badge shows only FSSAI line */
+  .hero-cert-badge {
+    min-width: unset;
+    padding: 7px 12px;
+    right: 4px;
+    bottom: 14%;
+  }
+  .hcb-row { display: none; }
+  .hcb-row.fssai-row { display: block; }
 }
 </style>
 </head>
@@ -758,7 +802,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
         <div class="hero-cert-badge">
           <div class="hcb-row"><span class="hcb-label">Net Wt:</span> 200 g / 7.05 OZ</div>
           <div class="hcb-row"><span class="hcb-label">MRP:</span> ₹220 <span class="hcb-sub">(Incl. of all taxes)</span></div>
-          <div class="hcb-row"><span class="hcb-label">FSSAI Lic No:</span> <strong>21225008000525</strong></div>
+          <div class="hcb-row fssai-row"><span class="hcb-label">FSSAI Lic No:</span> <strong>21225008000525</strong></div>
           <div class="hcb-row"><span class="hcb-label">Mfd. by:</span> Narayan Mallapur, A902,<br>Vaishnavi Nakshatra,<br>Yeshwantpur. Bengaluru 550 022 INDIA</div>
           <div class="hcb-row"><span class="hcb-label">WhatsApp:</span> +91 9158932320</div>
         </div>
@@ -801,7 +845,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
         <div class="why-desc">Time-honored recipes passed down through generations of pickle makers.</div>
       </div>
       <div class="why-card">
-        <span class="why-icon">🏅</span>
+        <span class="why-icon">✅</span>
         <div class="why-title">FSSAI Certified</div>
         <div class="why-desc">Licensed and certified for your safety. License No: 21225008000525</div>
       </div>
@@ -916,11 +960,20 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
         <div class="t-name">Dr Srikanth Vijayasimha</div>
         <div class="t-role">A leading Vascular and General Surgeon</div>
         <div class="featured-video">
-          <a href="https://youtube.com/shorts/4C-D7l5OhPE?feature=share" target="_blank" rel="noopener noreferrer" class="yt-link" aria-label="Watch PIKL on YouTube">
-            <span class="yt-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-            </span>
-            Watch on YouTube
+          <a href="https://youtube.com/shorts/4C-D7l5OhPE?feature=share" target="_blank" rel="noopener noreferrer" class="yt-thumb-card" aria-label="Watch PIKL on YouTube">
+            <img class="yt-thumb-img" 
+              src="https://i.ytimg.com/vi/4C-D7l5OhPE/hqdefault.jpg" 
+              alt="Dr Srikanth Vijayasimha talking about PIKL pickle — watch on YouTube"
+              onerror="this.style.display='none'; this.parentElement.querySelector('.yt-thumb-overlay').style.background='rgba(0,0,0,0.7)'">
+            <div class="yt-thumb-overlay">
+              <div class="yt-play-btn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+            </div>
+            <div class="yt-thumb-label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#FF0000"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1C4.5 20.5 12 20.5 12 20.5s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.8 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+              Watch on YouTube
+            </div>
           </a>
         </div>
       </div>
@@ -1063,7 +1116,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
     <span class="section-label">Self-Pickup</span>
     <h2 class="section-title">Introducing: Self-Pickup Locations</h2>
     <p class="section-desc">We're bringing convenience closer to you with pickup points across Bengaluru.</p>
-    <div class="pickup-grid" style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="pickup-grid">
       <div class="pickup-card">
         <div class="pickup-status status-green"><span class="dot dot-green"></span> Now Available</div>
         <div class="pickup-name">📍 Yeshwantpur</div>
@@ -1206,7 +1259,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
       </div>
       <div class="faq-item">
         <button class="faq-q">What is the connection to AFCON? <span class="faq-arrow">▼</span></button>
-        <div class="faq-a">AFCON (Annapurna Food Products &amp; Condiments) was started in the 1960s by late Bellari Bhavani Shankar Rao, a gold medalist in food science. The business was later run by Narayan's uncle, and Narayan himself joined in 1979. AFCON's green chilli pickle was legendary — served in hotels and canteens across Bengaluru for decades. PIKL is Narayan's way of reviving that beloved recipe for a new generation.</div>
+        <div class="faq-a">AFCON (Annapurna Food Products &amp; Condiments) was started in the 1960s by late Bellari Bhavani Shankar Rao, a gold medalist in food science. The business was later run by Narayan's uncle, late D R Mallapur and Narayan himself joined in 1979. AFCON's green chilli pickle was legendary — served in hotels and canteens across Bengaluru for decades. PIKL is Narayan's way of reviving that beloved recipe for a new generation.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q">Can I order in bulk for events or gifting? <span class="faq-arrow">▼</span></button>
@@ -1285,7 +1338,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
     </div>
     <div class="footer-col">
       <h5>Certifications</h5>
-      <div class="footer-cert-badge">🏅 FSSAI Licensed</div>
+      <div class="footer-cert-badge">✅ FSSAI Licensed</div>
       <ul style="margin-top:8px;">
         <li style="font-size:0.78rem;">Lic No: 21225008000525</li>
         <li style="margin-top:10px;font-size:0.78rem;"><strong style="color:rgba(255,255,255,0.7)">Mfd. by:</strong><br>Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
