@@ -1226,6 +1226,14 @@ function filterRecipes(category, clickedBtn) {
   const titles = {all:'All Recipes', snacks:'Snacks', mains:'Mains', sides:'Sides', fusion:'Fusion'};
   document.getElementById('section-title').textContent = titles[category];
   document.getElementById('recipe-count').textContent = '(' + visible + ')';
+
+  // Scroll to recipes section
+  const recipesSection = document.getElementById('recipes');
+  if (recipesSection) {
+    const navHeight = document.querySelector('nav').offsetHeight;
+    const top = recipesSection.getBoundingClientRect().top + window.scrollY - navHeight;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
 }
 </script>
 </body>
