@@ -201,31 +201,6 @@ nav { transition: all 0.3s; }
 <body>
 <div style="background:#0a1a0f;min-height:100vh">
 
-  <!-- NAV -->
-  <nav aria-label="Recipe category filter" class="sticky z-50" style="top:0;background:rgba(10,26,15,1);backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,183,5,0.25)">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="flex items-center justify-between py-4 gap-4">
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <a href="https://getpikl.in" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
-            <div class="flex items-center justify-center text-xs font-bold" style="width:1.75rem;height:1.75rem;border-radius:9999px;background:#f2b705;color:#0a1a0f;font-family:'Playfair Display', serif">P</div>
-            <span class="hidden sm:block text-sm font-medium uppercase" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.7);letter-spacing:0.18em">PIKL</span>
-          </a>
-          <a href="https://getpikl.in/pikl-paneer-final" class="hidden sm:block text-sm" style="font-family:'DM Sans', sans-serif;font-weight:500;color:rgba(250,246,239,0.6);letter-spacing:0.06em;text-decoration:none;padding:4px 12px;border:1px solid rgba(250,246,239,0.2);border-radius:9999px;white-space:nowrap;transition:color 0.2s">Pikl Paneer</a>
-        </div>
-        <div class="flex items-center gap-1 overflow-x-auto scrollbar-none" role="tablist">
-          <button role="tab" aria-selected="true" onclick="filterRecipes('all',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:500;color:#0a1a0f;background:#f2b705;border:none;letter-spacing:0.02em;cursor:pointer">All Recipes</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('snacks',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Snacks</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('mains',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Mains</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('sides',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Sides</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('fusion',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Fusion</button>
-        </div>
-        <div class="hidden md:flex items-center gap-1.5 text-xs flex-shrink-0" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.4);letter-spacing:0.1em">
-          <span style="width:0.375rem;height:0.375rem;border-radius:9999px;background:#e9822c;display:inline-block"></span>Recipes
-        </div>
-      </div>
-    </div>
-  </nav>
-
   <!-- HERO SECTION -->
   <section class="relative min-h-screen flex items-end overflow-hidden" aria-label="PIKL Green Chilli Pickle Recipes hero section">
     <div class="absolute inset-0 z-0">
@@ -275,6 +250,31 @@ nav { transition: all 0.3s; }
       <div style="width:1px;height:3rem;background:linear-gradient(to bottom, rgba(242,183,5,0.6), transparent)"></div>
     </div>
   </section>
+
+  <!-- NAV -->
+  <nav aria-label="Recipe category filter" class="sticky z-50" style="top:0;background:rgba(10,26,15,1);backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,183,5,0.25)">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex items-center justify-between py-4 gap-4">
+        <div class="flex items-center gap-2 flex-shrink-0">
+          <a href="https://getpikl.in" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
+            <div class="flex items-center justify-center text-xs font-bold" style="width:1.75rem;height:1.75rem;border-radius:9999px;background:#f2b705;color:#0a1a0f;font-family:'Playfair Display', serif">P</div>
+            <span class="hidden sm:block text-sm font-medium uppercase" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.7);letter-spacing:0.18em">PIKL</span>
+          </a>
+          <a href="https://getpikl.in/pikl-paneer-final" class="hidden sm:block text-sm" style="font-family:'DM Sans', sans-serif;font-weight:500;color:rgba(250,246,239,0.6);letter-spacing:0.06em;text-decoration:none;padding:4px 12px;border:1px solid rgba(250,246,239,0.2);border-radius:9999px;white-space:nowrap;transition:color 0.2s">Pikl Paneer</a>
+        </div>
+        <div class="flex items-center gap-1 overflow-x-auto scrollbar-none" role="tablist">
+          <button role="tab" aria-selected="true" onclick="filterRecipes('all',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:500;color:#0a1a0f;background:#f2b705;border:none;letter-spacing:0.02em;cursor:pointer">All Recipes</button>
+          <button role="tab" aria-selected="false" onclick="filterRecipes('snacks',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Snacks</button>
+          <button role="tab" aria-selected="false" onclick="filterRecipes('mains',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Mains</button>
+          <button role="tab" aria-selected="false" onclick="filterRecipes('sides',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Sides</button>
+          <button role="tab" aria-selected="false" onclick="filterRecipes('fusion',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Fusion</button>
+        </div>
+        <div class="hidden md:flex items-center gap-1.5 text-xs flex-shrink-0" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.4);letter-spacing:0.1em">
+          <span style="width:0.375rem;height:0.375rem;border-radius:9999px;background:#e9822c;display:inline-block"></span>Recipes
+        </div>
+      </div>
+    </div>
+  </nav>
 
   <!-- RECIPES SECTION -->
   <section id="recipes" aria-label="Recipe collection" style="background:#0a1a0f;min-height:100vh;padding:5rem 1.5rem">
@@ -1172,6 +1172,65 @@ nav { transition: all 0.3s; }
   </section>
 </div>
 
+<!-- ══ WHATSAPP CTA ══ -->
+<div style="background:#2C3E2D;padding:60px 24px;text-align:center;">
+  <div style="max-width:560px;margin:0 auto;">
+    <span style="font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(232,132,10,0.8);font-weight:600;margin-bottom:14px;display:block;font-family:'DM Sans',sans-serif;">500+ jars. Zero regrets.</span>
+    <h2 style="font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:#FDFCF9;margin-bottom:10px;letter-spacing:-0.02em;">Ready to Cook with PIKL?</h2>
+    <p style="font-size:0.92rem;color:rgba(253,252,249,0.65);margin-bottom:4px;font-family:'DM Sans',sans-serif;">Bengaluru's most-loved green chilli pickle. Handcrafted. FSSAI Certified. Personally delivered by Narayan.</p>
+    <div style="font-family:'DM Serif Display',serif;font-size:2.6rem;color:#E8840A;font-weight:700;margin:20px 0 4px;">₹220</div>
+    <div style="font-size:0.82rem;color:rgba(253,252,249,0.45);margin-bottom:28px;font-family:'DM Sans',sans-serif;">per 200g jar · Free delivery across Bengaluru</div>
+    <a href="https://wa.me/919158932320?text=Hi%20Narayan%2C%20I%27d%20like%20to%20order%20PIKL!" style="background:#25D366;color:white;border:none;border-radius:8px;padding:16px 36px;font-size:1rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background 0.2s;font-family:'DM Sans',sans-serif;" onmouseover="this.style.background='#22c55e'" onmouseout="this.style.background='#25D366'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.9 0C5.35 0 .008 5.34.008 11.9c0 2.098.546 4.07 1.495 5.786L0 24l6.515-1.47A11.86 11.86 0 0 0 11.9 23.8C18.45 23.8 23.8 18.46 23.8 11.9 23.8 5.34 18.45 0 11.9 0zm0 21.8a9.86 9.86 0 0 1-5.031-1.372l-.361-.214-3.736.844.87-3.633-.235-.373A9.837 9.837 0 0 1 1.96 11.9C1.96 6.397 6.396 1.96 11.9 1.96c5.504 0 9.94 4.437 9.94 9.94 0 5.504-4.436 9.9-9.94 9.9z"/></svg>
+      Order on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer style="background:#2C3E2D;color:rgba(255,255,255,0.9);padding:60px 24px 0;border-top:1px solid rgba(255,255,255,0.08);">
+  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;">
+    <div>
+      <div style="font-size:1.5rem;font-weight:800;letter-spacing:0.04em;color:white;margin-bottom:12px;font-family:'DM Sans',sans-serif;">PIKL<span style="color:#E8840A;">.</span></div>
+      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:300px;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Premium homemade green chilli pickle, traditionally prepared with mustard, fenugreek &amp; groundnut oil.</p>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.08);border:1.5px solid #f59e0b;border-radius:10px;padding:10px 16px;font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.5;margin-bottom:16px;max-width:300px;font-family:'DM Sans',sans-serif;">
+        <span style="color:#dc2626;font-size:1.5rem;flex-shrink:0;line-height:1;">♥</span>
+        Handcrafted in Bengaluru with love and authentic recipes.
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;">
+        <span style="width:16px;height:16px;border-radius:3px;border:2px solid #22c55e;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:block;"></span></span>
+        &nbsp;100% Vegetarian Product
+      </div>
+    </div>
+    <div>
+      <h5 style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;font-family:'DM Sans',sans-serif;">Navigate</h5>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="https://getpikl.in" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Home</a></li>
+        <li><a href="https://getpikl.in/#story" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Our Story</a></li>
+        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Testimonials</a></li>
+        <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Recipes</a></li>
+        <li><a href="https://getpikl.in/#faq" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5 style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;font-family:'DM Sans',sans-serif;">Contact &amp; Order</h5>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="tel:+919158932320" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">+91 91589 32320</a></li>
+        <li style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.55;font-family:'DM Sans',sans-serif;">A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022<br>INDIA</li>
+      </ul>
+      <div style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#86efac;border-radius:6px;padding:7px 12px;font-size:0.78rem;font-weight:600;display:inline-block;margin-top:14px;font-family:'DM Sans',sans-serif;">✅ FSSAI Licensed</div>
+      <ul style="list-style:none;margin-top:8px;">
+        <li style="font-size:0.76rem;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">Lic No: 21225008000525</li>
+        <li style="margin-top:10px;font-size:0.76rem;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;"><strong style="color:rgba(255,255,255,0.6)">Mfd. by:</strong><br>Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.78rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;">
+    <span>© 2026 PIKL. All rights reserved.</span>
+    <span>Net Wt: 200g / 7.05 oz &nbsp;|&nbsp; MRP: ₹220</span>
+  </div>
+</footer>
+
 <script>
 function toggleRecipe(btn, stepsId) {
   const steps = document.getElementById(stepsId);
@@ -1226,14 +1285,6 @@ function filterRecipes(category, clickedBtn) {
   const titles = {all:'All Recipes', snacks:'Snacks', mains:'Mains', sides:'Sides', fusion:'Fusion'};
   document.getElementById('section-title').textContent = titles[category];
   document.getElementById('recipe-count').textContent = '(' + visible + ')';
-
-  // Scroll to recipes section
-  const recipesSection = document.getElementById('recipes');
-  if (recipesSection) {
-    const navHeight = document.querySelector('nav').offsetHeight;
-    const top = recipesSection.getBoundingClientRect().top + window.scrollY - navHeight;
-    window.scrollTo({ top, behavior: 'smooth' });
-  }
 }
 </script>
 </body>
