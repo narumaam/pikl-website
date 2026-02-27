@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<meta name="theme-color" content="#2C3E2D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIKL Journal — Stories from the Kitchen</title>
+<meta name="description" content="Stories, recipes, and tales from the PIKL kitchen. Narayan Mallapur's green chilli pickle journal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   PIKL BRAND TOKENS
+══════════════════════════════════════════════════ */
+:root {
+  --forest:      #2C3E2D;
+  --forest-dark: #1e2e1f;
+  --saffron:     #E8840A;
+  --saffron-lt:  #fdf0e0;
+  --terracotta:  #C4622D;
+  --cream:       #F5F0E8;
+  --cream-soft:  #FDFCF9;
+  --sand:        #D4C4A8;
+  --gray-100:    #EAE6DC;
+  --gray-200:    #D4CEBD;
+  --gray-400:    #9A9280;
+  --gray-600:    #5C5648;
+  --gray-800:    #2E2A22;
+  --ink:         #1A1710;
+  --shadow-sm:   0 2px 8px rgba(26,23,16,.08);
+  --shadow-md:   0 4px 16px rgba(26,23,16,.10);
+  --shadow-lg:   0 8px 32px rgba(26,23,16,.13);
+  --r:           16px;
+  --r-sm:        8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--gray-800);
+  line-height: 1.65;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--gray-100); }
+::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
+
+/* ══════════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════════ */
+/* ══ NAV ══ */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-100, #EAE6DC);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem; color: #2C3E2D;
+  text-decoration: none; letter-spacing: -0.03em;
+  line-height: 1;
+}
+.nav-logo span { color: #E8840A; }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.nav-link-item {
+  font-size: 0.84rem; font-weight: 500;
+  color: #5C5648; text-decoration: none;
+  padding: 6px 12px; border-radius: 999px;
+  transition: color 0.15s, background 0.15s;
+}
+.nav-link-item:hover { color: #2C3E2D; background: rgba(44,62,45,0.06); }
+.nav-link-item.active { color: #2C3E2D; font-weight: 600; }
+.nav-tag {
+  font-size: 0.78rem; color: #9A9280;
+  display: flex; align-items: center; gap: 5px;
+  padding: 0 4px;
+}
+.nav-tag::before { content: '📍'; font-size: 0.72rem; }
+.nav-divider { width: 1px; height: 20px; background: #D4CEBD; }
+.nav-btn {
+  background: #E8840A; color: white;
+  border: none; border-radius: 999px;
+  padding: 9px 22px; font-size: 0.84rem; font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 6px;
+  white-space: nowrap;
+}
+.nav-btn:hover { background: #c4720a; transform: translateY(-1px); }
+.nav-btn::after { content: '→'; font-size: 0.8rem; }
+@media (max-width: 640px) {
+  nav { padding: 0 16px; }
+  .nav-tag, .nav-link-item:not(.active), .nav-divider { display: none; }
+  .nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+}
+
+/* ══════════════════════════════════════════════════
+   JOURNAL HEADER
+══════════════════════════════════════════════════ */
+.journal-header {
+  background: var(--forest);
+  padding: 72px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.journal-header::before {
+  content: 'JOURNAL';
+  position: absolute;
+  bottom: -30px; left: 50%; transform: translateX(-50%);
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(80px, 15vw, 160px);
+  color: rgba(245,240,232,0.04);
+  letter-spacing: -4px;
+  white-space: nowrap; pointer-events: none;
+}
+.journal-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--saffron);
+  margin-bottom: 14px;
+}
+.journal-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--cream); line-height: 1.1;
+  letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.journal-subtitle {
+  font-size: 1rem; color: rgba(245,240,232,0.65);
+  max-width: 480px; margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.journal-meta {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 0.78rem; color: rgba(245,240,232,0.45);
+}
+.journal-meta span { color: var(--saffron); }
+
+/* ══════════════════════════════════════════════════
+   MAIN LAYOUT
+══════════════════════════════════════════════════ */
+.page-wrap {
+  max-width: 1100px; margin: 0 auto;
+  padding: 56px 24px 80px;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ══════════════════════════════════════════════════
+   BLOG POSTS
+══════════════════════════════════════════════════ */
+.posts { display: flex; flex-direction: column; gap: 56px; }
+
+/* ── Individual Post ── */
+.post {
+  background: var(--cream-soft);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s;
+}
+.post:hover { box-shadow: var(--shadow-md); }
+
+/* ── Post Hero Image ── */
+.post-cover {
+  width: 100%; aspect-ratio: 16/9;
+  object-fit: cover; display: block;
+}
+.post-cover-wrap { position: relative; overflow: hidden; }
+.post-cover-wrap img { transition: transform 0.4s ease; }
+.post:hover .post-cover-wrap img { transform: scale(1.02); }
+
+/* ── Post Video ── */
+.post-video-wrap {
+  position: relative; padding-bottom: 56.25%;
+  height: 0; overflow: hidden; background: var(--ink);
+  max-width: 100%;
+}
+.post-video-wrap[style*="177.78%"] {
+  max-width: 340px; margin: 0 auto;
+}
+.post-video-wrap iframe, .post-video-wrap video {
+  position: absolute; top: 0; left: 0;
+  width: 100%; height: 100%; border: none;
+}
+
+/* ── Post Body ── */
+.post-body { padding: 32px 36px 36px; }
+
+.post-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-bottom: 14px;
+}
+.post-tag {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 3px 10px;
+  border-radius: 999px; border: 1px solid;
+}
+.post-tag.recipe   { color: var(--saffron);    background: var(--saffron-lt);  border-color: rgba(232,132,10,0.25); }
+.post-tag.story    { color: var(--forest);     background: rgba(44,62,45,0.08); border-color: rgba(44,62,45,0.2); }
+.post-tag.tips     { color: var(--terracotta); background: rgba(196,98,45,0.08); border-color: rgba(196,98,45,0.2); }
+.post-tag.news     { color: #1A5C8A;           background: rgba(26,92,138,0.08); border-color: rgba(26,92,138,0.2); }
+
+.post-date {
+  font-size: 0.72rem; color: var(--gray-400);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 6px;
+}
+.post-date::before { content: '—'; color: var(--saffron); }
+
+.post-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  color: var(--forest); line-height: 1.2;
+  letter-spacing: -0.02em; margin-bottom: 14px;
+}
+
+.post-excerpt {
+  font-size: 0.95rem; color: var(--gray-600);
+  line-height: 1.75; margin-bottom: 24px;
+}
+
+/* ── Post Content (full article body) ── */
+.post-content { font-size: 0.95rem; color: var(--gray-800); line-height: 1.8; }
+.post-content p { margin-bottom: 18px; }
+.post-content p:last-child { margin-bottom: 0; }
+.post-content h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.2rem; color: var(--forest);
+  margin: 28px 0 12px; letter-spacing: -0.01em;
+}
+.post-content strong { color: var(--forest); font-weight: 600; }
+.post-content em { color: var(--gray-600); font-style: italic; }
+.post-content blockquote {
+  border-left: 3px solid var(--saffron);
+  padding: 12px 20px; margin: 20px 0;
+  background: var(--saffron-lt);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+  font-style: italic; color: var(--gray-600);
+}
+
+/* ── Inline Image (within post content) ── */
+.post-inline-img {
+  width: 100%; border-radius: var(--r-sm);
+  margin: 20px 0; display: block;
+  box-shadow: var(--shadow-sm);
+}
+.post-img-caption {
+  text-align: center; font-size: 0.75rem;
+  color: var(--gray-400); margin-top: -12px; margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* ── Read More / Collapse ── */
+.post-toggle {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; font-weight: 600; color: var(--forest);
+  background: none; border: none; cursor: pointer;
+  padding: 0; text-decoration: underline;
+  text-decoration-color: rgba(44,62,45,0.25);
+  text-underline-offset: 3px;
+  transition: color 0.15s;
+}
+.post-toggle:hover { color: var(--saffron); }
+.post-toggle-arrow { transition: transform 0.25s; font-style: normal; }
+.post-toggle.open .post-toggle-arrow { transform: rotate(180deg); }
+
+.post-full {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1);
+}
+.post-full.open { max-height: 2000px; }
+
+/* ── Post Footer ── */
+.post-footer {
+  margin-top: 28px; padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.post-author {
+  display: flex; align-items: center; gap: 10px;
+}
+.post-author-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--forest); color: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.72rem; font-weight: 700; flex-shrink: 0;
+  border: 2px solid rgba(232,132,10,0.3);
+}
+.post-author-name { font-size: 0.82rem; font-weight: 600; color: var(--forest); }
+.post-author-role { font-size: 0.72rem; color: var(--gray-400); }
+
+.post-share {
+  display: flex; align-items: center; gap: 8px;
+}
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 6px 12px; border-radius: 999px;
+  border: 1px solid var(--gray-200); background: var(--cream);
+  color: var(--gray-600); cursor: pointer; text-decoration: none;
+  transition: all 0.15s;
+}
+.share-btn:hover { border-color: var(--saffron); color: var(--saffron); background: var(--saffron-lt); }
+.share-btn.wa { border-color: #25D366; color: #25D366; }
+.share-btn.wa:hover { background: #e8fdf0; }
+
+/* ══════════════════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════════════════ */
+.post-divider {
+  display: flex; align-items: center; gap: 16px;
+  color: var(--sand); font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.post-divider::before, .post-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--gray-100);
+}
+
+/* ══════════════════════════════════════════════════
+   SIDEBAR
+══════════════════════════════════════════════════ */
+.sidebar { position: sticky; top: 80px; display: flex; flex-direction: column; gap: 28px; }
+
+.sidebar-card {
+  background: var(--cream-soft); border: 1px solid var(--gray-100);
+  border-radius: var(--r); padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+.sidebar-card-title {
+  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--saffron);
+  margin-bottom: 16px;
+}
+
+/* About card */
+.sidebar-about-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem; color: var(--forest);
+  letter-spacing: -1px; margin-bottom: 8px;
+}
+.sidebar-about-logo span { color: var(--saffron); }
+.sidebar-about-text { font-size: 0.85rem; color: var(--gray-600); line-height: 1.65; margin-bottom: 16px; }
+.sidebar-order-btn {
+  display: block; text-align: center; text-decoration: none;
+  background: var(--saffron); color: white;
+  font-size: 0.85rem; font-weight: 600;
+  padding: 10px 20px; border-radius: 999px;
+  transition: background 0.15s;
+}
+.sidebar-order-btn:hover { background: #c4720a; }
+
+/* Category tags */
+.sidebar-cats { display: flex; flex-wrap: wrap; gap: 6px; }
+.sidebar-cat {
+  font-size: 0.75rem; font-weight: 500;
+  padding: 5px 12px; border-radius: 999px;
+  background: var(--cream); border: 1px solid var(--gray-200);
+  color: var(--gray-600); cursor: pointer; transition: all 0.15s;
+  text-decoration: none;
+}
+.sidebar-cat:hover, .sidebar-cat.active {
+  background: var(--forest); color: var(--cream); border-color: var(--forest);
+}
+
+/* Recent posts */
+.recent-post {
+  display: flex; gap: 12px; align-items: flex-start;
+  padding: 10px 0; border-bottom: 1px solid var(--gray-100);
+}
+.recent-post:last-child { border-bottom: none; padding-bottom: 0; }
+.recent-post-num {
+  font-family: 'DM Serif Display', serif; font-size: 1.2rem;
+  color: var(--gray-200); flex-shrink: 0; line-height: 1;
+  min-width: 28px;
+}
+.recent-post-title { font-size: 0.82rem; font-weight: 500; color: var(--forest); line-height: 1.4; }
+.recent-post-date { font-size: 0.7rem; color: var(--gray-400); margin-top: 3px; }
+
+/* Newsletter */
+.newsletter-text { font-size: 0.85rem; color: var(--gray-600); margin-bottom: 14px; line-height: 1.55; }
+.newsletter-form { display: flex; flex-direction: column; gap: 8px; }
+.newsletter-input {
+  padding: 10px 14px; border-radius: var(--r-sm);
+  border: 1px solid var(--gray-200); background: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+  color: var(--gray-800); outline: none;
+  transition: border-color 0.15s;
+}
+.newsletter-input:focus { border-color: var(--saffron); }
+.newsletter-btn {
+  padding: 10px 14px; border-radius: var(--r-sm);
+  background: var(--forest); color: var(--cream);
+  font-family: 'DM Sans', sans-serif; font-size: 0.85rem;
+  font-weight: 600; border: none; cursor: pointer;
+  transition: background 0.15s;
+}
+.newsletter-btn:hover { background: var(--forest-dark); }
+
+/* ══════════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════════ */
+footer {
+  background: var(--forest); color: rgba(245,240,232,0.7);
+  text-align: center; padding: 40px 24px;
+  font-size: 0.82rem;
+}
+footer a {
+  color: var(--saffron); text-decoration: none;
+}
+.footer-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.6rem; color: var(--cream);
+  letter-spacing: -0.5px; margin-bottom: 8px;
+}
+.footer-logo span { color: var(--saffron); }
+
+/* ══════════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .page-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .sidebar { position: static; }
+}
+@media (max-width: 600px) {
+  .post-body { padding: 22px 20px 26px; }
+  .journal-header { padding: 52px 20px 48px; }
+  .page-wrap { padding: 36px 16px 60px; }
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+/* ══════════════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.post { animation: fadeUp 0.5s ease both; }
+.post:nth-child(1) { animation-delay: 0.05s; }
+.post:nth-child(2) { animation-delay: 0.12s; }
+.post:nth-child(3) { animation-delay: 0.20s; }
+
+/* ══ PIKL UNIFIED NAV ══ */
+.pikl-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EAE6DC;
+  padding: 0 24px;
+}
+.pikl-nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.pikl-nav-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.65rem; color: #2C3E2D;
+  text-decoration: none; letter-spacing: -0.04em;
+  line-height: 1; flex-shrink: 0; font-weight: 400;
+}
+.pikl-nav-logo span { color: #E8840A; }
+.pikl-nav-links {
+  display: flex; align-items: center; gap: 2px;
+  flex: 1; justify-content: center;
+}
+.pikl-nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem; font-weight: 500; color: #5C5648;
+  text-decoration: none; padding: 7px 13px; border-radius: 999px;
+  transition: color 0.15s, background 0.15s; white-space: nowrap;
+}
+.pikl-nav-link:hover { color: #2C3E2D; background: rgba(44,62,45,0.07); }
+.pikl-nav-link.active { color: #2C3E2D; font-weight: 600; background: rgba(44,62,45,0.07); }
+.pikl-nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.pikl-nav-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; color: #9A9280;
+  display: flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.pikl-nav-tag::before { content: "📍"; font-size: 0.7rem; }
+.pikl-nav-divider { width: 1px; height: 18px; background: #D4CEBD; flex-shrink: 0; }
+.pikl-nav-btn {
+  font-family: 'DM Sans', sans-serif;
+  background: #E8840A; color: white;
+  border: none; border-radius: 999px;
+  padding: 9px 20px; font-size: 0.84rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.pikl-nav-btn:hover { background: #c4720a; transform: translateY(-1px); }
+.pikl-nav-btn::after { content: "→"; font-size: 0.78rem; }
+@media (max-width: 768px) {
+  .pikl-nav-tag, .pikl-nav-divider { display: none; }
+  .pikl-nav-links { gap: 0; }
+  .pikl-nav-link { font-size: 0.78rem; padding: 6px 9px; }
+}
+@media (max-width: 480px) {
+  .pikl-nav { padding: 0 14px; }
+  .pikl-nav-link { display: none; }
+  .pikl-nav-link.active { display: flex; }
+  .pikl-nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .pikl-nav-btn::after { display: none; }
+}
+/* ══ PIKL UNIFIED FOOTER ══ */
+.pikl-footer {
+  background: #2C3E2D; color: rgba(255,255,255,0.9);
+  padding: 60px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: 'DM Sans', sans-serif;
+}
+.pikl-footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px;
+}
+.pikl-footer-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.8rem; color: white; letter-spacing: -0.04em;
+  margin-bottom: 12px; line-height: 1;
+}
+.pikl-footer-logo span { color: #E8840A; }
+.pikl-footer-tagline {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  line-height: 1.7; max-width: 280px; margin-bottom: 20px;
+}
+.pikl-footer-heart-box {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(232,132,10,0.1);
+  border: 1px solid rgba(232,132,10,0.35);
+  border-radius: 10px; padding: 10px 16px;
+  font-size: 0.83rem; color: rgba(255,255,255,0.8);
+  line-height: 1.5; margin-bottom: 16px; max-width: 300px;
+}
+.pikl-footer-heart { color: #dc2626; font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+.pikl-footer-veg {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px;
+}
+.pikl-footer-veg-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1.5px solid #4ade80; background: #4ade80;
+}
+.pikl-footer-col h5 {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+}
+.pikl-footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pikl-footer-col li { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+.pikl-footer-col a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  transition: color 0.15s;
+}
+.pikl-footer-col a:hover { color: white; }
+.pikl-footer-fssai {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 8px 14px; font-size: 0.75rem;
+  color: rgba(255,255,255,0.75); margin-bottom: 12px;
+}
+.pikl-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0; max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.75rem; color: rgba(255,255,255,0.35);
+  flex-wrap: wrap; gap: 8px;
+}
+@media (max-width: 900px) {
+  .pikl-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+@media (max-width: 540px) {
+  .pikl-footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .pikl-footer { padding: 40px 16px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav class="pikl-nav">
+  <div class="pikl-nav-inner">
+    <a href="https://getpikl.in" class="pikl-nav-logo">PIKL<span>.</span></a>
+    <div class="pikl-nav-links">
+      <a href="https://getpikl.in" class="pikl-nav-link">Home</a>
+      <a href="https://getpikl.in/pikl-paneer-final" class="pikl-nav-link">Pikl Paneer</a>
+      <a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" class="pikl-nav-link">Recipes</a>
+      <a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" class="pikl-nav-link">Reviews</a>
+      <a href="https://getpikl.in/blog.html" class="pikl-nav-link active">Journal</a>
+    </div>
+    <div class="pikl-nav-right">
+      <span class="pikl-nav-tag">ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕರಕುಶಲ ವಸ್ತುಗಳು</span>
+      <div class="pikl-nav-divider"></div>
+      <a href="https://wa.me/919158932320" class="pikl-nav-btn">Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HEADER ══ -->
+<div class="journal-header">
+  <div class="journal-eyebrow">PIKL Journal</div>
+  <h1 class="journal-title">Stories from<br><em>the Kitchen</em></h1>
+  <p class="journal-subtitle">Recipes, memories, and musings from Narayan's kitchen — the home of Bengaluru's most beloved green chilli pickle.</p>
+  <div class="journal-meta">
+    <span>Handcrafted in Bengaluru</span> &nbsp;·&nbsp; Written with love
+  </div>
+</div>
+
+<!-- ══ MAIN ══ -->
+<div class="page-wrap">
+
+  <!-- ══ POSTS ══ -->
+  <main class="posts">
+
+    <!-- ════════════════════════════════
+         POST 1 — Text + Image
+    ════════════════════════════════ -->
+    <article class="post">
+      <div class="post-cover-wrap">
+        <!-- 
+          ┌─────────────────────────────────────────┐
+          │  TO ADD A COVER IMAGE:                  │
+          │  Replace the src below with your image  │
+          │  URL or upload the image file           │
+          └─────────────────────────────────────────┘
+        -->
+        <img class="post-cover" 
+          src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=900&q=80" 
+          alt="Green chillies — the heart of PIKL pickle"
+          onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="post-tag story">Story</span>
+        </div>
+        <div class="post-date">February 2026</div>
+        <h2 class="post-title">Why I Started PIKL — The Recipe That Refused to Die</h2>
+        <div class="post-excerpt">
+          <p>Every jar of PIKL carries sixty years of memory. The green chilli pickle I make today is the same one that filled the canteens and kitchens of Bengaluru in the 1960s — and almost disappeared with time.</p>
+        </div>
+
+        <!-- Read More expands this -->
+        <button class="post-toggle" onclick="togglePost(this)" aria-expanded="false">
+          Read more <span class="post-toggle-arrow">↓</span>
+        </button>
+        <div class="post-full">
+          <div class="post-content" style="margin-top:20px;">
+            <p>My uncle, late D R Mallapur, ran a small food company called AFCON — Annapurna Food Products & Condiments — started in the 1960s by a brilliant food technologist, late Bellari Bhavani Shankar Rao, a gold medalist in food science. What AFCON made, above everything else, was a green chilli pickle that people still talk about in hushed, reverent tones.</p>
+
+            <blockquote>"I still remember the smell of those green chillies. There was nothing else like it in Bengaluru."</blockquote>
+
+            <p>I joined AFCON in 1979, and for years I worked alongside my uncle learning every detail of that recipe. The exact ratio of mustard seeds to fenugreek. The precise amount of groundnut oil. The technique of sun-drying. These things cannot be written down — they live in your hands and your nose.</p>
+
+            <!-- 
+              ┌──────────────────────────────────────────┐
+              │  TO ADD AN INLINE IMAGE:                 │
+              │  Replace the src with your image URL     │
+              └──────────────────────────────────────────┘
+            -->
+            <img class="post-inline-img"
+              src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80"
+              alt="Glass jars of pickle — PIKL's signature"
+              onerror="this.style.display='none'">
+            <p class="post-img-caption">The jars that started everything — PIKL in Yeshwantpur, 2024</p>
+
+            <p>When AFCON eventually wound down, that recipe could have been lost forever. It nearly was. For years I thought about it — how something so beloved could simply vanish. And then, one quiet afternoon, I decided it wouldn't. PIKL was born not as a business, but as an act of preservation.</p>
+
+            <h3>What makes the recipe different</h3>
+            <p>Most commercial pickles use red chilli powder for heat and colour. We use <strong>72% fresh green chillies</strong> — hand-selected, cut fresh, never dried into powder. The heat is real but gentle. The colour is honest. Nothing is faked.</p>
+
+            <p>The mustard seeds, the fenugreek, the turmeric, the asafoetida — each one has a role that was worked out over decades of trial and adjustment. When you open a jar of PIKL, what you smell is sixty years of memory.</p>
+          </div>
+        </div>
+
+        <div class="post-footer">
+          <div class="post-author">
+            <div class="post-author-avatar">NM</div>
+            <div>
+              <div class="post-author-name">Narayan Mallapur</div>
+              <div class="post-author-role">Founder, PIKL</div>
+            </div>
+          </div>
+          <div class="post-share">
+            <a class="share-btn wa" href="https://wa.me/?text=Read+this+story+about+PIKL+pickle+%E2%80%94+getpikl.in/journal" target="_blank">
+              Share on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="post-divider">More from the kitchen</div>
+
+    <!-- ════════════════════════════════
+         POST 2 — Recipe with Video
+    ════════════════════════════════ -->
+    <article class="post">
+      <!-- 
+        ┌─────────────────────────────────────────────┐
+        │  TO EMBED A YOUTUBE VIDEO:                  │
+        │  1. Get your YouTube video ID               │
+        │     e.g. youtube.com/watch?v=XXXX → XXXX   │
+        │  2. Replace VIDEO_ID below with your ID    │
+        │                                             │
+        │  TO EMBED A YOUTUBE SHORT:                  │
+        │  Use: https://www.youtube.com/embed/VIDEO_ID│
+        │  (same for Shorts and regular videos)       │
+        └─────────────────────────────────────────────┘
+      -->
+      <div class="post-video-wrap" style="padding-bottom:177.78%;">
+        <!-- YouTube Short — aspect ratio 9:16 -->
+        <iframe 
+          src="https://www.youtube.com/embed/4C-D7l5OhPE?rel=0&modestbranding=1" 
+          title="PIKL — Dr Srikanth Vijayasimha on PIKL pickle"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="post-tag recipe">Recipe</span>
+          <span class="post-tag tips">Tips</span>
+        </div>
+        <div class="post-date">January 2026</div>
+        <h2 class="post-title">Paneer + PIKL — The Combo Nobody Expected</h2>
+        <div class="post-excerpt">
+          <p>Dr Srikanth Vijayasimha, a leading vascular surgeon, tried something unusual — PIKL green chilli pickle on warm microwave paneer. His verdict? Watch and find out. This is the kind of discovery that happens when great flavour meets an open mind.</p>
+        </div>
+
+        <button class="post-toggle" onclick="togglePost(this)" aria-expanded="false">
+          Read more <span class="post-toggle-arrow">↓</span>
+        </button>
+        <div class="post-full">
+          <div class="post-content" style="margin-top:20px;">
+            <p>We never claim to know every way PIKL can be used. That's the beauty of a truly versatile condiment — people discover combinations we never imagined. Dr Srikanth's paneer experiment is one of our favourites.</p>
+
+            <h3>Try it yourself</h3>
+            <p>Heat a piece of paneer in the microwave for 45 seconds until just warm — not hot. Place a small spoonful of PIKL on top. The warmth of the paneer releases the aromas of the green chilli and mustard oil. The acidity cuts through the richness of the paneer. It works.</p>
+
+            <blockquote>"It turned out to be a very tasty combo. 😄👍🏼" — Dr Srikanth Vijayasimha</blockquote>
+
+            <h3>Other unexpected PIKL pairings</h3>
+            <p>Our customers have shared some wonderful discoveries over the past year. <strong>PIKL on avocado toast</strong> — the green chilli complements the creaminess beautifully. <strong>PIKL stirred into curd rice</strong> — it transforms a simple meal into something extraordinary. <strong>A small spoon of PIKL alongside scrambled eggs</strong> — tried and approved by multiple households.</p>
+
+            <p>What have you discovered? Tag us on WhatsApp or Instagram and we may feature your combination in our next journal post.</p>
+          </div>
+        </div>
+
+        <div class="post-footer">
+          <div class="post-author">
+            <div class="post-author-avatar">NM</div>
+            <div>
+              <div class="post-author-name">Narayan Mallapur</div>
+              <div class="post-author-role">Founder, PIKL</div>
+            </div>
+          </div>
+          <div class="post-share">
+            <a class="share-btn wa" href="https://wa.me/?text=Paneer+%2B+PIKL+%E2%80%94+you+have+to+try+this+getpikl.in/journal" target="_blank">
+              Share on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="post-divider">More from the kitchen</div>
+
+    <!-- ════════════════════════════════
+         POST 3 — Text only
+    ════════════════════════════════ -->
+    <article class="post">
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="post-tag news">News</span>
+        </div>
+        <div class="post-date">December 2025</div>
+        <h2 class="post-title">PIKL is Now Available in Malleshwaram & Bannerghatta</h2>
+        <div class="post-excerpt">
+          <p>We're thrilled to announce that PIKL has expanded beyond Yeshwantpur. You can now find us in two new neighbourhoods — Malleshwaram in North Bengaluru, and Bannerghatta in the South. Thank you for making this growth possible.</p>
+        </div>
+
+        <button class="post-toggle" onclick="togglePost(this)" aria-expanded="false">
+          Read more <span class="post-toggle-arrow">↓</span>
+        </button>
+        <div class="post-full">
+          <div class="post-content" style="margin-top:20px;">
+            <p>When we started PIKL, we began with a simple hope: that Bengaluru would remember this taste and want it back. The response has been overwhelming — and deeply humbling.</p>
+
+            <p>Yeshwantpur, our home, was the beginning. It was right that we started there — in the same neighbourhood where AFCON once operated, where this recipe has roots. But from the first batch, orders came in from all corners of the city.</p>
+
+            <h3>Why Malleshwaram</h3>
+            <p>Malleshwaram is old Bengaluru — the kind of neighbourhood that understands food as culture, not just fuel. It felt like a natural next step. There is a deep tradition of home-made, honest food in those streets, and we hope PIKL fits right into it.</p>
+
+            <h3>Why Bannerghatta</h3>
+            <p>South Bengaluru has been asking for PIKL loudly and patiently. We heard you. Bannerghatta is now officially part of the PIKL map.</p>
+
+            <p>If you'd like to find out the exact pickup point in your area, reach out on WhatsApp and we'll share the details. And if you're in an area we don't yet serve — tell us. <strong>Demand creates supply.</strong></p>
+
+            <blockquote>Want to become a PIKL distributor in your apartment or neighbourhood? We're looking for people who love PIKL and want to share it. Message us on WhatsApp.</blockquote>
+          </div>
+        </div>
+
+        <div class="post-footer">
+          <div class="post-author">
+            <div class="post-author-avatar">NM</div>
+            <div>
+              <div class="post-author-name">Narayan Mallapur</div>
+              <div class="post-author-role">Founder, PIKL</div>
+            </div>
+          </div>
+          <div class="post-share">
+            <a class="share-btn wa" href="https://wa.me/919158932320" target="_blank">
+              Order Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 
+    ════════════════════════════════════════════════
+    HOW TO ADD A NEW BLOG POST
+    ════════════════════════════════════════════════
+
+    Copy this template and paste it above, after a <div class="post-divider">...</div>
+
+    ┌───────────────────────────────────────────────
+    │ TEXT-ONLY POST:
+    └───────────────────────────────────────────────
+
+    <article class="post">
+      <div class="post-body">
+        <div class="post-tags">
+          <span class="post-tag story">Story</span>   ← options: story, recipe, tips, news
+        </div>
+        <div class="post-date">Month Year</div>
+        <h2 class="post-title">Your Post Title Here</h2>
+        <div class="post-excerpt">
+          <p>Your one-paragraph summary here.</p>
+        </div>
+        <button class="post-toggle" onclick="togglePost(this)">
+          Read more <span class="post-toggle-arrow">↓</span>
+        </button>
+        <div class="post-full">
+          <div class="post-content" style="margin-top:20px;">
+            <p>Your full article text here. Use multiple paragraph tags.</p>
+            <h3>A subheading if needed</h3>
+            <p>More text...</p>
+            <blockquote>A quote goes here</blockquote>
+          </div>
+        </div>
+        <div class="post-footer">
+          <div class="post-author">
+            <div class="post-author-avatar">NM</div>
+            <div>
+              <div class="post-author-name">Narayan Mallapur</div>
+              <div class="post-author-role">Founder, PIKL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    ┌───────────────────────────────────────────────
+    │ POST WITH COVER IMAGE:
+    └───────────────────────────────────────────────
+    Add this BEFORE <div class="post-body">:
+
+    <div class="post-cover-wrap">
+      <img class="post-cover" src="YOUR_IMAGE_URL" alt="Description">
+    </div>
+
+    ┌───────────────────────────────────────────────
+    │ POST WITH YOUTUBE VIDEO:
+    └───────────────────────────────────────────────
+    Add this BEFORE <div class="post-body">:
+
+    <div class="post-video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+        title="Video title" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
+
+    ┌───────────────────────────────────────────────
+    │ POST WITH LOCAL VIDEO FILE:
+    └───────────────────────────────────────────────
+    <div class="post-video-wrap">
+      <video controls preload="metadata">
+        <source src="your-video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    ┌───────────────────────────────────────────────
+    │ INLINE IMAGE INSIDE ARTICLE BODY:
+    └───────────────────────────────────────────────
+    Inside <div class="post-content">:
+
+    <img class="post-inline-img" src="YOUR_IMAGE" alt="Description">
+    <p class="post-img-caption">Optional caption here</p>
+
+    ════════════════════════════════════════════════
+    -->
+
+  </main>
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+
+    <!-- About PIKL -->
+    <div class="sidebar-card">
+      <div class="sidebar-about-logo">PIKL<span>.</span></div>
+      <p class="sidebar-about-text">Premium homemade green chilli pickle by Narayan Mallapur. A revival of the legendary AFCON recipe, handcrafted in Bengaluru since 2024.</p>
+      <a href="https://wa.me/919158932320" class="sidebar-order-btn">Order on WhatsApp ↗</a>
+    </div>
+
+    <!-- Categories -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Browse by category</div>
+      <div class="sidebar-cats">
+        <a href="#" class="sidebar-cat active">All</a>
+        <a href="#" class="sidebar-cat">Stories</a>
+        <a href="#" class="sidebar-cat">Recipes</a>
+        <a href="#" class="sidebar-cat">Tips</a>
+        <a href="#" class="sidebar-cat">News</a>
+      </div>
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="sidebar-card">
+      <div class="sidebar-card-title">Recent posts</div>
+      <div class="recent-post">
+        <div class="recent-post-num">01</div>
+        <div>
+          <div class="recent-post-title">Why I Started PIKL — The Recipe That Refused to Die</div>
+          <div class="recent-post-date">February 2026</div>
+        </div>
+      </div>
+      <div class="recent-post">
+        <div class="recent-post-num">02</div>
+        <div>
+          <div class="recent-post-title">Paneer + PIKL — The Combo Nobody Expected</div>
+          <div class="recent-post-date">January 2026</div>
+        </div>
+      </div>
+      <div class="recent-post">
+        <div class="recent-post-num">03</div>
+        <div>
+          <div class="recent-post-title">PIKL is Now Available in Malleshwaram & Bannerghatta</div>
+          <div class="recent-post-date">December 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter / Stay Connected -->
+    <div class="sidebar-card" style="background: var(--forest); border-color: var(--forest-dark);">
+      <div class="sidebar-card-title" style="color: var(--saffron);">Stay in the loop</div>
+      <p class="newsletter-text" style="color: rgba(245,240,232,0.65);">New posts, new flavours, new pickup locations. Be the first to know.</p>
+      <div class="newsletter-form">
+        <input class="newsletter-input" type="tel" placeholder="Your WhatsApp number"
+          style="background: rgba(245,240,232,0.08); border-color: rgba(245,240,232,0.15); color: var(--cream);">
+        <button class="newsletter-btn" style="background: var(--saffron);"
+          onclick="window.open('https://wa.me/919158932320?text=Hi+Narayan!+Please+keep+me+updated+on+PIKL+news+and+new+posts.','_blank')">
+          Notify me on WhatsApp
+        </button>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="pikl-footer">
+  <div class="pikl-footer-inner">
+    <div>
+      <div class="pikl-footer-logo">PIKL<span>.</span></div>
+      <p class="pikl-footer-tagline">Premium homemade green chilli pickle, traditionally prepared with mustard, fenugreek &amp; groundnut oil.</p>
+      <div class="pikl-footer-heart-box">
+        <span class="pikl-footer-heart">♥</span>
+        Handcrafted in Bengaluru with love and authentic recipes.
+      </div>
+      <div class="pikl-footer-veg">
+        <span class="pikl-footer-veg-dot"></span> 100% Vegetarian Product
+      </div>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="https://getpikl.in">Home</a></li>
+        <li><a href="https://getpikl.in/pikl-paneer-final">Pikl Paneer</a></li>
+        <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes">Recipes</a></li>
+        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying">Reviews</a></li>
+        <li><a href="https://getpikl.in/blog.html">Journal</a></li>
+      </ul>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="https://wa.me/919158932320">+91 91589 32320</a></li>
+        <li><a href="tel:+919158932320">Call Narayan</a></li>
+        <li>A902, Vaishnavi Nakshatra,<br>Yeshwantpur,<br>Bengaluru 560 022</li>
+      </ul>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Certifications</h5>
+      <div class="pikl-footer-fssai">✅ FSSAI Licensed</div>
+      <ul>
+        <li style="font-size:0.75rem;">Lic No: 21225008000525</li>
+        <li style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.45);">Mfd. by: Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pikl-footer-bottom">
+    <span>© 2026 PIKL. All rights reserved.</span>
+    <span>Net Wt: 200g / 7.05 oz &nbsp;·&nbsp; MRP: ₹220 (Incl. of all taxes)</span>
+  </div>
+</footer>
+
+<script>
+function togglePost(btn) {
+  const full = btn.nextElementSibling;
+  const isOpen = full.classList.contains('open');
+  full.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+  btn.querySelector('.post-toggle-arrow').textContent = isOpen ? '↓' : '↑';
+}
+
+// Category filter (visual only — in a real CMS this would filter)
+document.querySelectorAll('.sidebar-cat').forEach(cat => {
+  cat.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelectorAll('.sidebar-cat').forEach(c => c.classList.remove('active'));
+    cat.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

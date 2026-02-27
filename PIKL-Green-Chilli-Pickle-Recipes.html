@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<meta name="theme-color" content="#2C3E2D">
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="preload" as="image" href="https://images.unsplash.com/photo-1596797038530-2c107229654b?w=1800&q=85&fit=crop"/>
 <title>PIKL Green Chilli Pickle Recipes</title>
@@ -196,6 +199,144 @@ article.group:hover {
 
 /* Nav scroll */
 nav { transition: all 0.3s; }
+
+/* ══ PIKL UNIFIED NAV ══ */
+.pikl-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EAE6DC;
+  padding: 0 24px;
+}
+.pikl-nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.pikl-nav-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.65rem; color: #2C3E2D;
+  text-decoration: none; letter-spacing: -0.04em;
+  line-height: 1; flex-shrink: 0; font-weight: 400;
+}
+.pikl-nav-logo span { color: #E8840A; }
+.pikl-nav-links {
+  display: flex; align-items: center; gap: 2px;
+  flex: 1; justify-content: center;
+}
+.pikl-nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem; font-weight: 500; color: #5C5648;
+  text-decoration: none; padding: 7px 13px; border-radius: 999px;
+  transition: color 0.15s, background 0.15s; white-space: nowrap;
+}
+.pikl-nav-link:hover { color: #2C3E2D; background: rgba(44,62,45,0.07); }
+.pikl-nav-link.active { color: #2C3E2D; font-weight: 600; background: rgba(44,62,45,0.07); }
+.pikl-nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.pikl-nav-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; color: #9A9280;
+  display: flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.pikl-nav-tag::before { content: "📍"; font-size: 0.7rem; }
+.pikl-nav-divider { width: 1px; height: 18px; background: #D4CEBD; flex-shrink: 0; }
+.pikl-nav-btn {
+  font-family: 'DM Sans', sans-serif;
+  background: #E8840A; color: white;
+  border: none; border-radius: 999px;
+  padding: 9px 20px; font-size: 0.84rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.pikl-nav-btn:hover { background: #c4720a; transform: translateY(-1px); }
+.pikl-nav-btn::after { content: "→"; font-size: 0.78rem; }
+@media (max-width: 768px) {
+  .pikl-nav-tag, .pikl-nav-divider { display: none; }
+  .pikl-nav-links { gap: 0; }
+  .pikl-nav-link { font-size: 0.78rem; padding: 6px 9px; }
+}
+@media (max-width: 480px) {
+  .pikl-nav { padding: 0 14px; }
+  .pikl-nav-link { display: none; }
+  .pikl-nav-link.active { display: flex; }
+  .pikl-nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .pikl-nav-btn::after { display: none; }
+}
+/* ══ PIKL UNIFIED FOOTER ══ */
+.pikl-footer {
+  background: #2C3E2D; color: rgba(255,255,255,0.9);
+  padding: 60px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: 'DM Sans', sans-serif;
+}
+.pikl-footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px;
+}
+.pikl-footer-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.8rem; color: white; letter-spacing: -0.04em;
+  margin-bottom: 12px; line-height: 1;
+}
+.pikl-footer-logo span { color: #E8840A; }
+.pikl-footer-tagline {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  line-height: 1.7; max-width: 280px; margin-bottom: 20px;
+}
+.pikl-footer-heart-box {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(232,132,10,0.1);
+  border: 1px solid rgba(232,132,10,0.35);
+  border-radius: 10px; padding: 10px 16px;
+  font-size: 0.83rem; color: rgba(255,255,255,0.8);
+  line-height: 1.5; margin-bottom: 16px; max-width: 300px;
+}
+.pikl-footer-heart { color: #dc2626; font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+.pikl-footer-veg {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px;
+}
+.pikl-footer-veg-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1.5px solid #4ade80; background: #4ade80;
+}
+.pikl-footer-col h5 {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+}
+.pikl-footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pikl-footer-col li { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+.pikl-footer-col a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  transition: color 0.15s;
+}
+.pikl-footer-col a:hover { color: white; }
+.pikl-footer-fssai {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 8px 14px; font-size: 0.75rem;
+  color: rgba(255,255,255,0.75); margin-bottom: 12px;
+}
+.pikl-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0; max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.75rem; color: rgba(255,255,255,0.35);
+  flex-wrap: wrap; gap: 8px;
+}
+@media (max-width: 900px) {
+  .pikl-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+@media (max-width: 540px) {
+  .pikl-footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .pikl-footer { padding: 40px 16px 0; }
+}
 </style>
 </head>
 <body>
@@ -252,29 +393,23 @@ nav { transition: all 0.3s; }
   </section>
 
   <!-- NAV -->
-  <nav aria-label="Recipe category filter" class="sticky z-50" style="top:0;background:rgba(10,26,15,1);backdrop-filter:blur(12px);border-bottom:1px solid rgba(242,183,5,0.25)">
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
-      <div class="flex items-center justify-between py-4 gap-4">
-        <div class="flex items-center gap-2 flex-shrink-0">
-          <a href="https://getpikl.in" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;">
-            <div class="flex items-center justify-center text-xs font-bold" style="width:1.75rem;height:1.75rem;border-radius:9999px;background:#f2b705;color:#0a1a0f;font-family:'Playfair Display', serif">P</div>
-            <span class="hidden sm:block text-sm font-medium uppercase" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.7);letter-spacing:0.18em">PIKL</span>
-          </a>
-          <a href="https://getpikl.in/pikl-paneer-final" class="hidden sm:block text-sm" style="font-family:'DM Sans', sans-serif;font-weight:500;color:rgba(250,246,239,0.6);letter-spacing:0.06em;text-decoration:none;padding:4px 12px;border:1px solid rgba(250,246,239,0.2);border-radius:9999px;white-space:nowrap;transition:color 0.2s">Pikl Paneer</a>
-        </div>
-        <div class="flex items-center gap-1 overflow-x-auto scrollbar-none" role="tablist">
-          <button role="tab" aria-selected="true" onclick="filterRecipes('all',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:500;color:#0a1a0f;background:#f2b705;border:none;letter-spacing:0.02em;cursor:pointer">All Recipes</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('snacks',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Snacks</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('mains',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Mains</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('sides',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Sides</button>
-          <button role="tab" aria-selected="false" onclick="filterRecipes('fusion',this)" class="relative px-4 py-2 text-sm rounded-full whitespace-nowrap focus:outline-none" style="font-family:'DM Sans', sans-serif;font-weight:400;color:rgba(250,246,239,0.6);background:transparent;border:1px solid rgba(250,246,239,0.12);letter-spacing:0.02em;cursor:pointer">Fusion</button>
-        </div>
-        <div class="hidden md:flex items-center gap-1.5 text-xs flex-shrink-0" style="font-family:'DM Sans', sans-serif;color:rgba(250,246,239,0.4);letter-spacing:0.1em">
-          <span style="width:0.375rem;height:0.375rem;border-radius:9999px;background:#e9822c;display:inline-block"></span>Recipes
-        </div>
-      </div>
+  <nav class="pikl-nav">
+  <div class="pikl-nav-inner">
+    <a href="https://getpikl.in" class="pikl-nav-logo">PIKL<span>.</span></a>
+    <div class="pikl-nav-links">
+      <a href="https://getpikl.in" class="pikl-nav-link">Home</a>
+      <a href="https://getpikl.in/pikl-paneer-final" class="pikl-nav-link">Pikl Paneer</a>
+      <a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" class="pikl-nav-link active">Recipes</a>
+      <a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" class="pikl-nav-link">Reviews</a>
+      <a href="https://getpikl.in/blog.html" class="pikl-nav-link">Journal</a>
     </div>
-  </nav>
+    <div class="pikl-nav-right">
+      <span class="pikl-nav-tag">ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕರಕುಶಲ ವಸ್ತುಗಳು</span>
+      <div class="pikl-nav-divider"></div>
+      <a href="https://wa.me/919158932320" class="pikl-nav-btn">Order Now</a>
+    </div>
+  </div>
+</nav>
 
   <!-- RECIPES SECTION -->
   <section id="recipes" aria-label="Recipe collection" style="background:#0a1a0f;min-height:100vh;padding:5rem 1.5rem">
@@ -1188,46 +1323,49 @@ nav { transition: all 0.3s; }
 </div>
 
 <!-- ══ FOOTER ══ -->
-<footer style="background:#2C3E2D;color:rgba(255,255,255,0.9);padding:60px 24px 0;border-top:1px solid rgba(255,255,255,0.08);">
-  <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px;">
+<footer class="pikl-footer">
+  <div class="pikl-footer-inner">
     <div>
-      <div style="font-size:1.5rem;font-weight:800;letter-spacing:0.04em;color:white;margin-bottom:12px;font-family:'DM Sans',sans-serif;">PIKL<span style="color:#E8840A;">.</span></div>
-      <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7;max-width:300px;margin-bottom:20px;font-family:'DM Sans',sans-serif;">Premium homemade green chilli pickle, traditionally prepared with mustard, fenugreek &amp; groundnut oil.</p>
-      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,0.08);border:1.5px solid #f59e0b;border-radius:10px;padding:10px 16px;font-size:0.85rem;color:rgba(255,255,255,0.85);line-height:1.5;margin-bottom:16px;max-width:300px;font-family:'DM Sans',sans-serif;">
-        <span style="color:#dc2626;font-size:1.5rem;flex-shrink:0;line-height:1;">♥</span>
+      <div class="pikl-footer-logo">PIKL<span>.</span></div>
+      <p class="pikl-footer-tagline">Premium homemade green chilli pickle, traditionally prepared with mustard, fenugreek &amp; groundnut oil.</p>
+      <div class="pikl-footer-heart-box">
+        <span class="pikl-footer-heart">♥</span>
         Handcrafted in Bengaluru with love and authentic recipes.
       </div>
-      <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;color:rgba(255,255,255,0.6);font-family:'DM Sans',sans-serif;">
-        <span style="width:16px;height:16px;border-radius:3px;border:2px solid #22c55e;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;"><span style="width:7px;height:7px;border-radius:50%;background:#22c55e;display:block;"></span></span>
-        &nbsp;100% Vegetarian Product
+      <div class="pikl-footer-veg">
+        <span class="pikl-footer-veg-dot"></span> 100% Vegetarian Product
       </div>
     </div>
-    <div>
-      <h5 style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;font-family:'DM Sans',sans-serif;">Navigate</h5>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-        <li><a href="https://getpikl.in" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Home</a></li>
-        <li><a href="https://getpikl.in/#story" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Our Story</a></li>
-        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Testimonials</a></li>
-        <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">Recipes</a></li>
-        <li><a href="https://getpikl.in/#faq" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">FAQ</a></li>
+    <div class="pikl-footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="https://getpikl.in">Home</a></li>
+        <li><a href="https://getpikl.in/pikl-paneer-final">Pikl Paneer</a></li>
+        <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes">Recipes</a></li>
+        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying">Reviews</a></li>
+        <li><a href="https://getpikl.in/blog.html">Journal</a></li>
       </ul>
     </div>
-    <div>
-      <h5 style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin-bottom:14px;font-family:'DM Sans',sans-serif;">Contact &amp; Order</h5>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-        <li><a href="tel:+919158932320" style="font-size:0.82rem;color:rgba(255,255,255,0.6);text-decoration:none;font-family:'DM Sans',sans-serif;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.6)'">+91 91589 32320</a></li>
-        <li style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:1.55;font-family:'DM Sans',sans-serif;">A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022<br>INDIA</li>
+    <div class="pikl-footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="https://wa.me/919158932320">+91 91589 32320</a></li>
+        <li><a href="tel:+919158932320">Call Narayan</a></li>
+        <li>A902, Vaishnavi Nakshatra,<br>Yeshwantpur,<br>Bengaluru 560 022</li>
       </ul>
-      <div style="background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.3);color:#86efac;border-radius:6px;padding:7px 12px;font-size:0.78rem;font-weight:600;display:inline-block;margin-top:14px;font-family:'DM Sans',sans-serif;">✅ FSSAI Licensed</div>
-      <ul style="list-style:none;margin-top:8px;">
-        <li style="font-size:0.76rem;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;">Lic No: 21225008000525</li>
-        <li style="margin-top:10px;font-size:0.76rem;color:rgba(255,255,255,0.4);font-family:'DM Sans',sans-serif;"><strong style="color:rgba(255,255,255,0.6)">Mfd. by:</strong><br>Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Certifications</h5>
+      <div class="pikl-footer-fssai">✅ FSSAI Licensed</div>
+      <ul>
+        <li style="font-size:0.75rem;">Lic No: 21225008000525</li>
+        <li style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.45);">Mfd. by: Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
       </ul>
     </div>
   </div>
-  <div style="border-top:1px solid rgba(255,255,255,0.1);padding:20px 0;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:0.78rem;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;">
+  <div class="pikl-footer-bottom">
     <span>© 2026 PIKL. All rights reserved.</span>
-    <span>Net Wt: 200g / 7.05 oz &nbsp;|&nbsp; MRP: ₹220</span>
+    <span>Net Wt: 200g / 7.05 oz &nbsp;·&nbsp; MRP: ₹220 (Incl. of all taxes)</span>
   </div>
 </footer>
 

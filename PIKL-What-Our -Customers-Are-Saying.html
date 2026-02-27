@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+CiAgPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMyQzNFMkQiLz4KICA8dGV4dCB4PSI1MCUiIHk9IjU0JSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsIHNlcmlmIiBmb250LXNpemU9IjM4IiBmb250LXdlaWdodD0iNzAwIgogICAgZmlsbD0iI0U4ODQwQSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9Ii0xIj5QPC90ZXh0Pgo8L3N2Zz4=">
+<meta name="theme-color" content="#2C3E2D">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIKL | What Our Customers Are Saying</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+:root{
+  --green:#2C3E2D;--green-dark:#1e2e1f;--green-light:#e8f0e8;--green-bg:#f0f4f0;
+  --saffron:#E8840A;--saffron-light:#fdf0e0;--terracotta:#C4622D;--sand:#D4C4A8;
+  --text:#2E2A22;--text-muted:#5C5648;--text-light:#9A9280;
+  --border:#EAE6DC;--border-mid:#D4CEBD;
+  --bg:#F5F0E8;--bg-soft:#FDFCF9;--bg-gray:#EAE6DC;--bg-dark:#2C3E2D;
+  --radius:16px;--radius-sm:8px;
+  --shadow:0 2px 8px rgba(26,23,16,.08);
+  --shadow-md:0 4px 16px rgba(26,23,16,.10);
+  --shadow-lg:0 8px 32px rgba(26,23,16,.12);
+}
+body{font-family:'DM Sans',-apple-system,BlinkMacSystemFont,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,240,232,0.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);padding:0 24px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{font-size:1.5rem;font-weight:800;letter-spacing:.04em;color:var(--text);text-decoration:none}
+.nav-logo span{color:var(--saffron)}
+.nav-right{display:flex;align-items:center;gap:20px}
+.nav-link{font-size:.88rem;color:var(--text-muted);text-decoration:none;font-weight:500;transition:color .2s}
+.nav-link:hover{color:var(--green)}
+.nav-link.active{color:var(--green);font-weight:600;border-bottom:2px solid var(--saffron);padding-bottom:2px}
+.nav-btn{background:var(--saffron);color:white;border:none;border-radius:8px;padding:10px 20px;font-size:.88rem;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s;display:inline-block;font-family:'DM Sans',sans-serif}
+.nav-btn:hover{background:#c4720a}
+
+/* HERO */
+.hero{background:var(--bg-dark);padding:80px 24px 100px;position:relative;overflow:hidden}
+.hero-deco-1{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(232,132,10,.07) 0%,transparent 70%);top:-300px;right:-200px;pointer-events:none}
+.hero-deco-2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.02) 0%,transparent 70%);bottom:-100px;left:-100px;pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,132,10,.12);border:1px solid rgba(232,132,10,.3);color:#f0a040;border-radius:999px;padding:6px 18px;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;animation:fadeUp .6s ease both}
+.eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#f0a040;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:700;line-height:1.12;color:#FDFCF9;margin-bottom:20px;letter-spacing:-.02em;animation:fadeUp .6s .1s ease both}
+.hero-h1 em{font-style:italic;color:var(--saffron)}
+.hero-desc{font-size:1.05rem;color:rgba(253,252,249,.7);max-width:560px;margin:0 auto 48px;line-height:1.7;animation:fadeUp .6s .2s ease both}
+.hero-stats{display:flex;gap:0;justify-content:center;background:rgba(253,252,249,.05);border:1px solid rgba(253,252,249,.1);border-radius:var(--radius);max-width:640px;margin:0 auto;overflow:hidden;animation:fadeUp .6s .3s ease both}
+.hero-stat{flex:1;padding:24px 20px;border-right:1px solid rgba(253,252,249,.1);text-align:center}
+.hero-stat:last-child{border-right:none}
+.hs-num{font-family:'DM Serif Display',serif;font-size:2.2rem;color:#FDFCF9;font-weight:700;line-height:1;display:block}
+.hs-num span{color:var(--saffron)}
+.hs-label{font-size:.75rem;color:rgba(253,252,249,.55);margin-top:6px;letter-spacing:.04em}
+.scroll-cue{margin-top:56px;display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp .6s .5s ease both}
+.scroll-cue span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(253,252,249,.35)}
+.scroll-cue-line{width:1px;height:48px;background:linear-gradient(to bottom,rgba(232,132,10,.6),transparent);animation:drip 1.8s infinite}
+@keyframes drip{0%{transform:scaleY(0);transform-origin:top;opacity:1}70%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* TEASER BAND */
+.teaser-band{background:linear-gradient(135deg,#fdf0e0 0%,#fef9f0 100%);border-top:1px solid rgba(232,132,10,.2);border-bottom:1px solid rgba(232,132,10,.2);padding:18px 24px}
+.teaser-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.teaser-text{font-size:.92rem;color:var(--terracotta);font-weight:500;display:flex;align-items:center;gap:8px}
+.teaser-text strong{color:var(--green)}
+.teaser-chips{display:flex;gap:8px;flex-wrap:wrap}
+.teaser-chip{background:white;border:1px solid rgba(232,132,10,.3);border-radius:999px;padding:5px 14px;font-size:.78rem;font-weight:500;color:var(--text-muted);display:flex;align-items:center;gap:5px}
+
+/* SECTION SHARED */
+.section{padding:80px 24px}
+.section.alt{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.section.cream{background:var(--bg)}
+.container{max-width:1200px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--saffron);margin-bottom:10px;display:block}
+.section-title{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:700;color:var(--green);line-height:1.2;margin-bottom:14px;letter-spacing:-.02em}
+.section-desc{font-size:1rem;color:var(--text-muted);max-width:540px;line-height:1.7;margin-bottom:48px}
+
+/* FEATURED TEXT */
+.featured-text{background:var(--bg-dark);border-radius:var(--radius);padding:48px;position:relative;overflow:hidden;color:#FDFCF9;margin-bottom:32px}
+.featured-text::before{content:'"';position:absolute;top:-40px;left:20px;font-family:'DM Serif Display',serif;font-size:20rem;line-height:1;color:rgba(232,132,10,.06);pointer-events:none}
+.featured-text-inner{position:relative;z-index:1}
+.ft-label{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#f0a040;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.ft-label-dot{width:6px;height:6px;border-radius:50%;background:#f0a040}
+.ft-stars{color:#f0a040;font-size:1rem;letter-spacing:3px;margin-bottom:20px}
+.ft-quote{font-family:'DM Serif Display',serif;font-size:clamp(1.2rem,2.5vw,1.65rem);font-style:italic;line-height:1.5;color:#FDFCF9;margin-bottom:28px}
+.ft-meta{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ft-avatar{width:56px;height:56px;border-radius:50%;background:rgba(232,132,10,.2);border:2px solid rgba(232,132,10,.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:700;color:#f0a040;font-family:'DM Serif Display',serif;flex-shrink:0}
+.ft-name{font-size:.95rem;font-weight:600;color:#FDFCF9}
+.ft-detail{font-size:.8rem;color:rgba(253,252,249,.6);margin-top:2px}
+.ft-tag{margin-left:auto;background:rgba(232,132,10,.15);border:1px solid rgba(232,132,10,.3);border-radius:999px;padding:6px 16px;font-size:.76rem;font-weight:600;color:#f0a040}
+
+/* VIDEO GRID */
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.video-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);transition:transform .25s,box-shadow .25s}
+.video-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(26,23,16,.14)}
+.video-card.featured{grid-column:1/-1;display:grid;grid-template-columns:1.1fr 1fr}
+.video-thumb{position:relative;aspect-ratio:16/9;background:#1a1a1a;cursor:pointer;overflow:hidden}
+.video-card.featured .video-thumb{aspect-ratio:unset;min-height:300px}
+.vthumb-1{background:linear-gradient(135deg,#2a4a2c 0%,#3d6640 50%,#2C3E2D 100%)}
+.vthumb-2{background:linear-gradient(135deg,#5c3a1a 0%,#8a5522 50%,#C4622D 100%)}
+.vthumb-3{background:linear-gradient(135deg,#1a3a2a 0%,#2C5F44 50%,#3a7a55 100%)}
+.vthumb-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+.vthumb-icon{font-size:3rem;line-height:1;opacity:.5}
+.vthumb-label{font-size:.75rem;color:rgba(255,255,255,.4);letter-spacing:.06em;text-transform:uppercase}
+.play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.2);transition:background .2s}
+.video-card:hover .play-overlay{background:rgba(0,0,0,.08)}
+.play-btn{width:64px;height:64px;border-radius:50%;background:var(--saffron);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(232,132,10,.5);transition:transform .2s,box-shadow .2s;cursor:pointer}
+.play-btn.large{width:76px;height:76px}
+.video-card:hover .play-btn{transform:scale(1.1);box-shadow:0 6px 28px rgba(232,132,10,.65)}
+.play-btn svg{margin-left:4px}
+.video-duration{position:absolute;bottom:10px;right:12px;background:rgba(0,0,0,.65);color:white;font-size:.72rem;font-weight:600;padding:3px 8px;border-radius:4px}
+.video-tag{position:absolute;top:12px;left:12px;background:var(--saffron);color:white;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
+.video-info{padding:20px 22px}
+.video-card.featured .video-info{padding:32px;display:flex;flex-direction:column;justify-content:center}
+.video-stars{color:var(--saffron);font-size:.88rem;letter-spacing:2px;margin-bottom:10px}
+.video-quote{font-style:italic;font-size:.95rem;color:var(--text);line-height:1.65;margin-bottom:16px}
+.video-card.featured .video-quote{font-size:1.05rem}
+.video-person{display:flex;align-items:center;gap:10px}
+.video-avatar{width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:.88rem;font-weight:700;color:var(--bg);flex-shrink:0;border:2px solid rgba(232,132,10,.3)}
+.video-name{font-size:.88rem;font-weight:600;color:var(--green)}
+.video-role{font-size:.76rem;color:var(--text-muted)}
+.video-badge{margin-top:20px;display:inline-flex;align-items:center;gap:6px;background:var(--green-light);border:1px solid rgba(44,62,45,.2);color:var(--green);border-radius:999px;padding:6px 14px;font-size:.76rem;font-weight:600}
+
+/* IMAGE TESTIMONIALS */
+.img-t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.img-t-card{background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.img-t-card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(232,132,10,.12);border-color:rgba(232,132,10,.3)}
+.img-t-photo{width:100%;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden}
+.iphoto-1{background:linear-gradient(135deg,#fef3e2 0%,#fde8c0 100%)}
+.iphoto-2{background:linear-gradient(135deg,#e8f0e8 0%,#d0e4d0 100%)}
+.iphoto-3{background:linear-gradient(135deg,#fce4d4 0%,#f0c4a8 100%)}
+.iphoto-4{background:linear-gradient(135deg,#f0ebe0 0%,#e4dcc8 100%)}
+.iphoto-5{background:linear-gradient(135deg,#e0eef0 0%,#c8dde4 100%)}
+.iphoto-6{background:linear-gradient(135deg,#f4e8f0 0%,#e0c8d8 100%)}
+.img-photo-label{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(26,23,16,.4));font-size:.68rem;color:rgba(255,255,255,.9);font-weight:600;letter-spacing:.06em;text-transform:uppercase;display:flex;align-items:center;gap:5px}
+.img-photo-label::before{content:'📸';font-size:.7rem}
+.photo-taste-tag{position:absolute;top:10px;right:10px;background:var(--saffron);color:white;font-size:.65rem;font-weight:700;letter-spacing:.08em;padding:3px 9px;border-radius:4px;text-transform:uppercase}
+.img-t-body{padding:18px 18px 20px}
+.img-t-stars{color:var(--saffron);font-size:.82rem;letter-spacing:1.5px;margin-bottom:8px}
+.img-t-quote{font-size:.88rem;color:var(--text);line-height:1.6;font-style:italic;margin-bottom:14px}
+.img-t-meta{display:flex;align-items:center;gap:8px}
+.img-t-avatar{width:32px;height:32px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;color:var(--bg);flex-shrink:0}
+.img-t-name{font-size:.8rem;font-weight:600;color:var(--green)}
+.img-t-loc{font-size:.72rem;color:var(--text-muted)}
+
+/* TRUST BAR */
+.trust-bar{background:var(--bg-gray);padding:20px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.trust-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.trust-label{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-light)}
+.trust-sep{width:1px;height:16px;background:var(--border-mid)}
+.trust-items{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.trust-item{background:var(--bg-soft);border:1px solid var(--border);border-radius:999px;padding:5px 14px;font-size:.78rem;font-weight:500;color:var(--text-muted)}
+
+/* TEXT MASONRY */
+.t-masonry{columns:3;column-gap:20px}
+.t-card{break-inside:avoid;background:var(--bg-soft);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);margin-bottom:20px;transition:transform .2s,box-shadow .2s}
+.t-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,132,10,.10);border-color:rgba(232,132,10,.3)}
+.t-card.highlight{background:linear-gradient(135deg,#fdf8f0 0%,#fdf4e4 100%);border-color:rgba(232,132,10,.22)}
+.t-card.green-card{background:linear-gradient(135deg,#f0f6f0 0%,#e8f2e8 100%);border-color:rgba(44,62,45,.18)}
+.t-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
+.t-stars{color:var(--saffron);font-size:.85rem;letter-spacing:1.5px}
+.t-platform{font-size:.68rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--text-light);background:var(--bg-gray);border-radius:4px;padding:3px 8px}
+.t-card-quote{font-size:.9rem;color:var(--text);line-height:1.65;font-style:italic;margin-bottom:16px}
+.t-card-bottom{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px solid var(--border)}
+.t-avatar{width:34px;height:34px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:var(--bg);flex-shrink:0}
+.t-name{font-size:.82rem;font-weight:600;color:var(--green)}
+.t-loc{font-size:.72rem;color:var(--text-muted)}
+
+/* MYSTERY SECTION */
+.mystery-section{background:var(--green);padding:80px 24px;position:relative;overflow:hidden}
+.mystery-deco{position:absolute;font-family:'DM Serif Display',serif;font-size:36rem;font-weight:700;color:rgba(255,255,255,.02);top:-80px;right:-40px;line-height:1;pointer-events:none;user-select:none}
+.mystery-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
+.mystery-label{font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(232,132,10,.9);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.mystery-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:#FDFCF9;line-height:1.2;margin-bottom:18px}
+.mystery-h2 em{font-style:italic;color:var(--saffron)}
+.mystery-desc{font-size:.95rem;color:rgba(253,252,249,.75);line-height:1.75;margin-bottom:32px}
+.mystery-cards{display:flex;flex-direction:column;gap:14px}
+.mystery-card{background:rgba(253,252,249,.05);border:1px solid rgba(253,252,249,.1);border-radius:var(--radius);padding:16px 20px;display:flex;align-items:center;gap:14px;transition:background .2s}
+.mystery-card:hover{background:rgba(253,252,249,.08)}
+.mystery-card-icon{font-size:1.5rem;flex-shrink:0}
+.mystery-card-title{font-size:.88rem;font-weight:600;color:#FDFCF9;margin-bottom:3px}
+.mystery-card-sub{font-size:.78rem;color:rgba(253,252,249,.5);line-height:1.5}
+.mystery-card-arrow{color:rgba(232,132,10,.5);font-size:1rem;margin-left:auto;flex-shrink:0}
+.mystery-box{background:rgba(253,252,249,.05);border:1px solid rgba(253,252,249,.1);border-radius:var(--radius);padding:28px}
+.mystery-box-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(253,252,249,.45);margin-bottom:14px}
+.mystery-review-blur{position:relative;overflow:hidden;margin-bottom:16px;border-radius:8px}
+.mystery-review-text{font-style:italic;color:rgba(253,252,249,.7);font-size:.88rem;line-height:1.65;filter:blur(5px);user-select:none;padding:4px 0}
+.mystery-blur-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(30,46,31,.5)}
+.mystery-blur-badge{background:var(--saffron);color:white;font-size:.73rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 18px;border-radius:999px;display:flex;align-items:center;gap:6px}
+.mystery-unlock-note{font-size:.76rem;color:rgba(253,252,249,.38);text-align:center;margin-bottom:18px}
+.btn-wa-mystery{background:var(--saffron);color:white;border:none;border-radius:8px;padding:14px 28px;font-size:.9rem;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .15s;font-family:'DM Sans',sans-serif;width:100%}
+.btn-wa-mystery:hover{background:#c4720a;transform:translateY(-1px)}
+
+/* SHARE SECTION */
+.share-section{background:linear-gradient(135deg,#fdf0e0 0%,#fef9f0 100%);padding:80px 24px;border-top:1px solid rgba(232,132,10,.2)}
+.share-inner{max-width:800px;margin:0 auto;text-align:center}
+.share-emoji{font-size:3rem;margin-bottom:20px;display:block}
+.share-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--green);margin-bottom:14px;letter-spacing:-.02em}
+.share-desc{font-size:1rem;color:var(--text-muted);line-height:1.7;margin-bottom:32px}
+.share-actions{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.btn-wa{background:#25D366;color:white;border:none;border-radius:8px;padding:14px 28px;font-size:.95rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,transform .15s;font-family:'DM Sans',sans-serif}
+.btn-wa:hover{background:#22c55e;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--green);border:2px solid var(--green);border-radius:8px;padding:12px 26px;font-size:.92rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .2s;font-family:'DM Sans',sans-serif}
+.btn-outline:hover{background:var(--green);color:white}
+
+/* ORDER CTA BAND */
+.order-cta-band{background:var(--bg-dark);padding:60px 24px;text-align:center}
+.order-cta-inner{max-width:560px;margin:0 auto}
+.order-cta-tag{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(232,132,10,.8);font-weight:600;margin-bottom:14px;display:block}
+.order-cta-h2{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3vw,2.4rem);color:#FDFCF9;margin-bottom:10px;letter-spacing:-.02em}
+.order-cta-desc{font-size:.92rem;color:rgba(253,252,249,.65);margin-bottom:4px}
+.order-cta-price{font-family:'DM Serif Display',serif;font-size:2.6rem;color:var(--saffron);font-weight:700;margin:20px 0 4px}
+.order-cta-size{font-size:.82rem;color:rgba(253,252,249,.45);margin-bottom:28px}
+
+/* FOOTER */
+footer{background:var(--bg-dark);color:rgba(255,255,255,.9);padding:60px 24px 0}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:48px}
+.footer-logo{font-size:1.5rem;font-weight:800;letter-spacing:.04em;color:white;margin-bottom:12px}
+.footer-logo span{color:var(--saffron)}
+.footer-tagline{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.7;max-width:300px;margin-bottom:20px}
+.footer-handcrafted-box{display:inline-flex;align-items:center;gap:8px;background:rgba(245,158,11,.08);border:1.5px solid #f59e0b;border-radius:10px;padding:10px 16px;font-size:.85rem;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:16px;max-width:300px}
+.footer-heart{color:#dc2626;font-size:1.5rem;flex-shrink:0;line-height:1}
+.footer-veg{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:rgba(255,255,255,.6)}
+.veg-dot{width:16px;height:16px;border-radius:3px;border:2px solid #22c55e;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.veg-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e}
+.footer-col h5{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col ul li{font-size:.82rem;color:rgba(255,255,255,.6);line-height:1.55}
+.footer-col ul a{color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s}
+.footer-col ul a:hover{color:white}
+.footer-cert-badge{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac;border-radius:6px;padding:7px 12px;font-size:.78rem;font-weight:600;display:inline-block}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding:20px 0;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.78rem;color:rgba(255,255,255,.35)}
+
+/* ANIMATIONS */
+.animate-in{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
+.animate-in.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .video-card.featured{grid-column:1;grid-template-columns:1fr}
+  .video-card.featured .video-thumb{min-height:220px}
+  .video-grid{grid-template-columns:1fr}
+  .img-t-grid{grid-template-columns:1fr 1fr}
+  .t-masonry{columns:2}
+  .mystery-inner{grid-template-columns:1fr;gap:40px}
+  .footer-inner{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:600px){
+  .hero{padding:60px 20px 80px}
+  .hero-stats{flex-direction:column;border:none;background:transparent;gap:4px}
+  .hero-stat{border-right:none;border:1px solid rgba(253,252,249,.1);border-radius:12px}
+  .img-t-grid{grid-template-columns:1fr}
+  .t-masonry{columns:1}
+  .featured-text{padding:28px 22px}
+  .featured-text::before{font-size:12rem}
+  .nav-right .nav-link{display:none}
+  .ft-tag{display:none}
+}
+
+/* ══ PIKL UNIFIED NAV ══ */
+.pikl-nav {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(245,240,232,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #EAE6DC;
+  padding: 0 24px;
+}
+.pikl-nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.pikl-nav-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.65rem; color: #2C3E2D;
+  text-decoration: none; letter-spacing: -0.04em;
+  line-height: 1; flex-shrink: 0; font-weight: 400;
+}
+.pikl-nav-logo span { color: #E8840A; }
+.pikl-nav-links {
+  display: flex; align-items: center; gap: 2px;
+  flex: 1; justify-content: center;
+}
+.pikl-nav-link {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.84rem; font-weight: 500; color: #5C5648;
+  text-decoration: none; padding: 7px 13px; border-radius: 999px;
+  transition: color 0.15s, background 0.15s; white-space: nowrap;
+}
+.pikl-nav-link:hover { color: #2C3E2D; background: rgba(44,62,45,0.07); }
+.pikl-nav-link.active { color: #2C3E2D; font-weight: 600; background: rgba(44,62,45,0.07); }
+.pikl-nav-right { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.pikl-nav-tag {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem; color: #9A9280;
+  display: flex; align-items: center; gap: 4px;
+  white-space: nowrap;
+}
+.pikl-nav-tag::before { content: "📍"; font-size: 0.7rem; }
+.pikl-nav-divider { width: 1px; height: 18px; background: #D4CEBD; flex-shrink: 0; }
+.pikl-nav-btn {
+  font-family: 'DM Sans', sans-serif;
+  background: #E8840A; color: white;
+  border: none; border-radius: 999px;
+  padding: 9px 20px; font-size: 0.84rem; font-weight: 600;
+  cursor: pointer; text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-flex; align-items: center; gap: 5px;
+  white-space: nowrap; flex-shrink: 0;
+}
+.pikl-nav-btn:hover { background: #c4720a; transform: translateY(-1px); }
+.pikl-nav-btn::after { content: "→"; font-size: 0.78rem; }
+@media (max-width: 768px) {
+  .pikl-nav-tag, .pikl-nav-divider { display: none; }
+  .pikl-nav-links { gap: 0; }
+  .pikl-nav-link { font-size: 0.78rem; padding: 6px 9px; }
+}
+@media (max-width: 480px) {
+  .pikl-nav { padding: 0 14px; }
+  .pikl-nav-link { display: none; }
+  .pikl-nav-link.active { display: flex; }
+  .pikl-nav-btn { padding: 8px 16px; font-size: 0.8rem; }
+  .pikl-nav-btn::after { display: none; }
+}
+/* ══ PIKL UNIFIED FOOTER ══ */
+.pikl-footer {
+  background: #2C3E2D; color: rgba(255,255,255,0.9);
+  padding: 60px 24px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-family: 'DM Sans', sans-serif;
+}
+.pikl-footer-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  padding-bottom: 48px;
+}
+.pikl-footer-logo {
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.8rem; color: white; letter-spacing: -0.04em;
+  margin-bottom: 12px; line-height: 1;
+}
+.pikl-footer-logo span { color: #E8840A; }
+.pikl-footer-tagline {
+  font-size: 0.85rem; color: rgba(255,255,255,0.55);
+  line-height: 1.7; max-width: 280px; margin-bottom: 20px;
+}
+.pikl-footer-heart-box {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(232,132,10,0.1);
+  border: 1px solid rgba(232,132,10,0.35);
+  border-radius: 10px; padding: 10px 16px;
+  font-size: 0.83rem; color: rgba(255,255,255,0.8);
+  line-height: 1.5; margin-bottom: 16px; max-width: 300px;
+}
+.pikl-footer-heart { color: #dc2626; font-size: 1.4rem; flex-shrink: 0; line-height: 1; }
+.pikl-footer-veg {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 4px 10px;
+}
+.pikl-footer-veg-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  border: 1.5px solid #4ade80; background: #4ade80;
+}
+.pikl-footer-col h5 {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px;
+}
+.pikl-footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.pikl-footer-col li { font-size: 0.85rem; color: rgba(255,255,255,0.65); line-height: 1.55; }
+.pikl-footer-col a {
+  color: rgba(255,255,255,0.65); text-decoration: none;
+  transition: color 0.15s;
+}
+.pikl-footer-col a:hover { color: white; }
+.pikl-footer-fssai {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px; padding: 8px 14px; font-size: 0.75rem;
+  color: rgba(255,255,255,0.75); margin-bottom: 12px;
+}
+.pikl-footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px 0; max-width: 1200px; margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.75rem; color: rgba(255,255,255,0.35);
+  flex-wrap: wrap; gap: 8px;
+}
+@media (max-width: 900px) {
+  .pikl-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+@media (max-width: 540px) {
+  .pikl-footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .pikl-footer { padding: 40px 16px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="pikl-nav">
+  <div class="pikl-nav-inner">
+    <a href="https://getpikl.in" class="pikl-nav-logo">PIKL<span>.</span></a>
+    <div class="pikl-nav-links">
+      <a href="https://getpikl.in" class="pikl-nav-link">Home</a>
+      <a href="https://getpikl.in/pikl-paneer-final" class="pikl-nav-link">Pikl Paneer</a>
+      <a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" class="pikl-nav-link">Recipes</a>
+      <a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" class="pikl-nav-link active">Reviews</a>
+      <a href="https://getpikl.in/blog.html" class="pikl-nav-link">Journal</a>
+    </div>
+    <div class="pikl-nav-right">
+      <span class="pikl-nav-tag">ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕರಕುಶಲ ವಸ್ತುಗಳು</span>
+      <div class="pikl-nav-divider"></div>
+      <a href="https://wa.me/919158932320" class="pikl-nav-btn">Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-deco-1"></div>
+  <div class="hero-deco-2"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      Real People. Real Flavour. Real Reactions.
+    </div>
+    <h1 class="hero-h1">Bengaluru Has <em>Spoken.</em><br>And It's Coming Back for More.</h1>
+    <p class="hero-desc">From first-timers to lifelong fans — meet the people who tried PIKL and couldn't stop talking about it. Their words, unedited. Their feelings, very real.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hs-num" id="counter1">500<span>+</span></span>
+        <div class="hs-label">Jars Delivered</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hs-num">4.9<span>★</span></span>
+        <div class="hs-label">Average Rating</div>
+      </div>
+      <div class="hero-stat">
+        <span class="hs-num" id="counter2">100<span>%</span></span>
+        <div class="hs-label">Would Recommend</div>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <span>Read their stories</span>
+      <div class="scroll-cue-line"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURIOSITY TEASER -->
+<div class="teaser-band">
+  <div class="teaser-inner">
+    <div class="teaser-text">🤫 <strong>Psst —</strong> one customer says it gave back a memory they thought was lost forever. Another cried (happy tears). Keep scrolling.</div>
+    <div class="teaser-chips">
+      <div class="teaser-chip">📹 Video Reviews</div>
+      <div class="teaser-chip">📸 Photo Stories</div>
+      <div class="teaser-chip">💬 Written Reviews</div>
+    </div>
+  </div>
+</div>
+
+<!-- EDITOR'S PICK FEATURED -->
+<section class="section alt">
+  <div class="container">
+    <span class="section-label">⭐ Editor's Pick</span>
+    <h2 class="section-title">A Review That Stopped Us in Our Tracks</h2>
+    <p class="section-desc">Not all testimonials are created equal. This one made Narayan sit down and take a breath.</p>
+    <div class="featured-text animate-in">
+      <div class="featured-text-inner">
+        <div class="ft-label"><span class="ft-label-dot"></span>Featured Review · WhatsApp · Unprompted</div>
+        <div class="ft-stars">★★★★★</div>
+        <div class="ft-quote">"My mother used to buy AFCON pickle from Malleswaram every month. When she passed, I thought that taste was gone forever — something you only keep in old photographs and fading memories. Then my colleague brought me a jar of PIKL. The first spoonful, I sat down and I cried. I mean it. It tasted exactly like those Sunday afternoons. Narayan didn't just make a pickle. He gave me back something I thought I'd lost."</div>
+        <div class="ft-meta">
+          <div class="ft-avatar">S</div>
+          <div>
+            <div class="ft-name">Suhasini Krishnamurti</div>
+            <div class="ft-detail">Retired teacher · Rajajinagar, Bengaluru · Has ordered 4 jars since</div>
+          </div>
+          <div class="ft-tag">Returning Customer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO TESTIMONIALS -->
+<section class="section cream">
+  <div class="container">
+    <span class="section-label">📹 On Camera</span>
+    <h2 class="section-title">Watch Them Taste It For the First Time</h2>
+    <p class="section-desc">Nothing is more honest than a first-reaction video. These customers shared their unfiltered opinions — and we love every single second of it.</p>
+    <div class="video-grid animate-in">
+
+      <!-- FEATURED VIDEO -->
+      <div class="video-card featured">
+        <div class="video-thumb vthumb-1">
+          <div class="vthumb-content">
+            <div class="vthumb-icon">🫙</div>
+            <div class="vthumb-label">First Taste Reaction</div>
+          </div>
+          <div class="video-tag">🔥 Most Watched</div>
+          <div class="play-overlay">
+            <div class="play-btn large"><svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="video-duration">2:34</div>
+        </div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <div class="video-quote">"I paused mid-bite because I couldn't believe what I was tasting. My husband thought something was wrong with me. I just kept saying — 'this is the pickle from my childhood. HOW?' Watch this on an empty stomach. You'll thank me."</div>
+          <div class="video-person">
+            <div class="video-avatar">A</div>
+            <div>
+              <div class="video-name">Ananya Bhat</div>
+              <div class="video-role">Food blogger · 12.4K followers · Indiranagar, Bengaluru</div>
+            </div>
+          </div>
+          <div class="video-badge">📍 Delivered same day · First-time buyer turned repeat customer</div>
+        </div>
+      </div>
+
+      <!-- VIDEO 2 -->
+      <div class="video-card">
+        <div class="video-thumb vthumb-2">
+          <div class="vthumb-content"><div class="vthumb-icon">🍚</div><div class="vthumb-label">The Rice Challenge</div></div>
+          <div class="play-overlay"><div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <div class="video-duration">1:47</div>
+        </div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <div class="video-quote">"My kids refused to eat plain rice. I added PIKL. Now they fight over who gets the last bit. This changed dinner forever in our house."</div>
+          <div class="video-person">
+            <div class="video-avatar">P</div>
+            <div>
+              <div class="video-name">Priya Nambiar</div>
+              <div class="video-role">Home cook · Koramangala · 3 jars within a month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIDEO 3 -->
+      <div class="video-card">
+        <div class="video-thumb vthumb-3">
+          <div class="vthumb-content"><div class="vthumb-icon">🎁</div><div class="vthumb-label">Gifting Unboxing</div></div>
+          <div class="play-overlay"><div class="play-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <div class="video-duration">3:12</div>
+        </div>
+        <div class="video-info">
+          <div class="video-stars">★★★★★</div>
+          <div class="video-quote">"Gifted 4 jars &amp; no occasion! Every single person called me the next day asking where to order more. Best. Gift. Decision. Of my life."</div>
+          <div class="video-person">
+            <div class="video-avatar">J</div>
+            <div>
+              <div class="video-name">Jaya</div>
+              <div class="video-role">Entrepreneur · Yeshwantpur · Already a great fan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE TESTIMONIALS -->
+<section class="section alt">
+  <div class="container">
+    <span class="section-label">📸 Caught in the Act</span>
+    <h2 class="section-title">When People Photograph It Before They Even Eat It</h2>
+    <p class="section-desc">You know something's special when the jar looks beautiful enough to photograph. Our customers agree — and they sent us the proof.</p>
+    <div class="img-t-grid animate-in">
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-1">🫙<div class="img-photo-label">Sunday Thali Setup</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"My Sunday thali is now incomplete without PIKL. The colour, the texture, the smell when you open the jar — it's a full experience before you even taste it."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">M</div><div><div class="img-t-name">Meenakshi Rao</div><div class="img-t-loc">Basavanagudi, Bengaluru</div></div></div>
+        </div>
+      </div>
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-2">🍽️<div class="img-photo-label">Office Desk Lunch</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"Brought PIKL to my office. Now 6 colleagues have ordered. We have a tiny PIKL fan club on our team. No shame whatsoever."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">V</div><div><div class="img-t-name">Vikram Iyer</div><div class="img-t-loc">MG Road, Bengaluru</div></div></div>
+        </div>
+      </div>
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-3">🎁<div class="img-photo-label">Diwali Gift Box</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"Narayan personally arranged the gift packaging. My relatives in Mysuru called it the best Diwali gift they've received in years. I ordered again immediately."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">S</div><div><div class="img-t-name">Savitha Gowda</div><div class="img-t-loc">JP Nagar, Bengaluru</div></div></div>
+        </div>
+      </div>
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-4">🥚<div class="img-photo-label">Fusion Experiment</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"I tried PIKL with scrambled eggs on toast. Don't judge me. It was incredible. I've never been so confused and delighted at the same time."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">N</div><div><div class="img-t-name">Neil D'Souza</div><div class="img-t-loc">Benson Town, Bengaluru</div></div></div>
+        </div>
+      </div>
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-5">✈️<div class="img-photo-label">Travelling with PIKL</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"Packed two jars for my trip to London. My British flatmates are obsessed. One of them is googling how to get it shipped internationally."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">D</div><div><div class="img-t-name">Deepa Murthy</div><div class="img-t-loc">Bengaluru → London</div></div></div>
+        </div>
+      </div>
+
+      <div class="img-t-card">
+        <div class="img-t-photo iphoto-6">👨‍🍳<div class="img-photo-label">Chef's Kitchen Test</div><div class="photo-taste-tag">Verified</div></div>
+        <div class="img-t-body">
+          <div class="img-t-stars">★★★★★</div>
+          <div class="img-t-quote">"I test condiments professionally. PIKL passed every test — balance, heat, depth, consistency. I'm recommending it to all my clients."</div>
+          <div class="img-t-meta"><div class="img-t-avatar">A</div><div><div class="img-t-name">Arjun Mathew</div><div class="img-t-loc">Professional Chef, Bengaluru</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <span class="trust-label">Loved by</span>
+    <div class="trust-sep"></div>
+    <div class="trust-items">
+      <div class="trust-item">👩‍🏫 Teachers</div>
+      <div class="trust-item">👨‍💻 Tech Workers</div>
+      <div class="trust-item">🍳 Home Cooks</div>
+      <div class="trust-item">👨‍🍳 Chefs</div>
+      <div class="trust-item">🎁 Gift-Givers</div>
+      <div class="trust-item">✈️ Travellers</div>
+      <div class="trust-item">👴 Nostalgic Bengalureans</div>
+      <div class="trust-item">🧑‍💼 Startup Teams</div>
+    </div>
+  </div>
+</div>
+
+<!-- TEXT MASONRY -->
+<section class="section cream">
+  <div class="container">
+    <span class="section-label">💬 What They're Saying</span>
+    <h2 class="section-title">Straight From Their WhatsApp Messages to Narayan</h2>
+    <p class="section-desc">Unedited. Unfiltered. Shared with permission. These are the exact words customers typed at 11pm after finishing dinner and reaching for the jar again.</p>
+    <div class="t-masonry">
+
+      <div class="t-card highlight">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"I ordered one jar to try. Three days later I ordered five more. My husband thought I'd lost my mind. I told him: some things are worth going a little crazy for."</div>
+        <div class="t-card-bottom"><div class="t-avatar">L</div><div><div class="t-name">Lakshmi Venkataraman</div><div class="t-loc">Malleswaram, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"My 78-year-old father has been eating pickles his entire life. He said PIKL is the best he has had in 40 years. That's not a small thing."</div>
+        <div class="t-card-bottom"><div class="t-avatar">G</div><div><div class="t-name">Girish Hegde</div><div class="t-loc">Sadashivanagar, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card green-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"Narayan personally delivers and had a full conversation about the pickle — the ingredients, his uncle's legacy. You're not just buying a jar. You're meeting a story."</div>
+        <div class="t-card-bottom"><div class="t-avatar">K</div><div><div class="t-name">Kavya Shetty</div><div class="t-loc">Hebbal, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"The groundnut oil base makes it unlike everything in the market. You taste the chilli, the mustard, the fenugreek distinctly. It's balanced in a way that feels almost mathematically perfect."</div>
+        <div class="t-card-bottom"><div class="t-avatar">H</div><div><div class="t-name">Harish Kamath</div><div class="t-loc">Food Scientist, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"I'm not a spicy food person — everyone who knows me knows this. But PIKL's heat made me a pickle person. That's basically a miracle."</div>
+        <div class="t-card-bottom"><div class="t-avatar">T</div><div><div class="t-name">Tanvi Joshi</div><div class="t-loc">Jayanagar, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card highlight">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"Ordered for my mother's birthday. Narayan added a handwritten note and delivered personally. My mother called him to say thank you. She's 72 and she called a stranger to thank him. That's PIKL."</div>
+        <div class="t-card-bottom"><div class="t-avatar">R</div><div><div class="t-name">Rahul Narayanan</div><div class="t-loc">HSR Layout, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"We order 10 jars at a time for our startup pantry. Every new employee tries curd rice with PIKL and immediately asks for the order link. It's our unofficial welcome ritual."</div>
+        <div class="t-card-bottom"><div class="t-avatar">A</div><div><div class="t-name">Aditi Rajan</div><div class="t-loc">Startup Founder, Koramangala</div></div></div>
+      </div>
+
+      <div class="t-card green-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"I asked Narayan to reduce the salt slightly for my diet. He did it on the very next batch specifically for me. Personalisation like this doesn't exist anywhere else."</div>
+        <div class="t-card-bottom"><div class="t-avatar">S</div><div><div class="t-name">Shoba Krishnan</div><div class="t-loc">Rajajinagar, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"Had it with hot chapati and ghee. My wife said I looked like I was meditating. I was. You will understand when you try it."</div>
+        <div class="t-card-bottom"><div class="t-avatar">B</div><div><div class="t-name">Bhaskar Murali</div><div class="t-loc">Banashankari, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card highlight">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"Tried it with idli, dosa, rice, chapati, and bread. Works with everything. I'm a little suspicious of how versatile it is. Too good."</div>
+        <div class="t-card-bottom"><div class="t-avatar">N</div><div><div class="t-name">Nandini Prasad</div><div class="t-loc">Jayanagar 4th Block, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"Sent two jars to my parents in Hubli. My mother called me and said she's been eating only this for the last three days. I had to order more for her immediately."</div>
+        <div class="t-card-bottom"><div class="t-avatar">C</div><div><div class="t-name">Chetan Kulkarni</div><div class="t-loc">Electronic City, Bengaluru</div></div></div>
+      </div>
+
+      <div class="t-card green-card">
+        <div class="t-card-top"><div class="t-stars">★★★★★</div><div class="t-platform">WhatsApp</div></div>
+        <div class="t-card-quote">"No artificial preservatives, no sugar, clean ingredients. As a nutritionist I'm very particular. PIKL is the only pickle I recommend without hesitation."</div>
+        <div class="t-card-bottom"><div class="t-avatar">R</div><div><div class="t-name">Rekha Subramaniam</div><div class="t-loc">Nutritionist, Indiranagar, Bengaluru</div></div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MYSTERY SECTION -->
+<section class="mystery-section">
+  <div class="mystery-deco">?</div>
+  <div class="mystery-inner">
+    <div>
+      <div class="mystery-label">🔒 The Reviews We Can't Show Yet</div>
+      <h2 class="mystery-h2">Some Stories Are<br><em>Too Good</em> to Spoil.</h2>
+      <p class="mystery-desc">We've received a few testimonials that are… extraordinary. A food journalist who completely changed her opinion on homemade pickles. A customer who flew from Mumbai just to pick up a jar. And a 6-year-old's first reaction that made an entire room cry with laughter — and then feel something much deeper. We're holding them back for now.</p>
+      <div class="mystery-cards">
+        <div class="mystery-card">
+          <div class="mystery-card-icon">✈️</div>
+          <div class="mystery-card-text">
+            <div class="mystery-card-title">The Mumbai Customer Who Flew In</div>
+            <div class="mystery-card-sub">Said they "needed to meet the man behind the pickle." First order was 20 jars.</div>
+          </div>
+          <div class="mystery-card-arrow">→</div>
+        </div>
+        <div class="mystery-card">
+          <div class="mystery-card-icon">📰</div>
+          <div class="mystery-card-text">
+            <div class="mystery-card-title">The Food Journalist's Full Review</div>
+            <div class="mystery-card-sub">Called PIKL "the most honest condiment in Bengaluru." Full piece dropping soon.</div>
+          </div>
+          <div class="mystery-card-arrow">→</div>
+        </div>
+        <div class="mystery-card">
+          <div class="mystery-card-icon">🧒</div>
+          <div class="mystery-card-text">
+            <div class="mystery-card-title">A 6-Year-Old's First Reaction</div>
+            <div class="mystery-card-sub">Three words. On camera. Made the entire room feel things simultaneously.</div>
+          </div>
+          <div class="mystery-card-arrow">→</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mystery-box">
+      <div class="mystery-box-title">🔒 Exclusive Review — Visible to Customers Only</div>
+      <div class="mystery-review-blur">
+        <div class="mystery-review-text">
+          "I've eaten at Michelin-starred restaurants in Paris, Tokyo, and New York. I've tasted condiments from every corner of India. What Narayan makes in his home in Yeshwantpur, Bengaluru, with green chillies and groundnut oil, is something most professional chefs spend their careers trying to achieve — a product that tastes completely alive. Every jar is a conversation. Every spoonful is a memory. If you haven't tried PIKL, you simply don't know what you're missing, and I say this with no exaggeration whatsoever. This is not a condiment. This is a feeling."
+        </div>
+        <div class="mystery-blur-overlay">
+          <div class="mystery-blur-badge">🔒 Unlock by Ordering</div>
+        </div>
+      </div>
+      <div class="mystery-unlock-note">Every customer gets access to our private review archive via WhatsApp</div>
+      <a href="https://wa.me/919158932320?text=Hi%20Narayan%2C%20I%27d%20like%20to%20order%20PIKL!" class="btn-wa-mystery">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.9 0C5.35 0 .008 5.34.008 11.9c0 2.098.546 4.07 1.495 5.786L0 24l6.515-1.47A11.86 11.86 0 0 0 11.9 23.8C18.45 23.8 23.8 18.46 23.8 11.9 23.8 5.34 18.45 0 11.9 0zm0 21.8a9.86 9.86 0 0 1-5.031-1.372l-.361-.214-3.736.844.87-3.633-.235-.373A9.837 9.837 0 0 1 1.96 11.9C1.96 6.397 6.396 1.96 11.9 1.96c5.504 0 9.94 4.437 9.94 9.94 0 5.504-4.436 9.9-9.94 9.9z"/></svg>
+        Order on WhatsApp — ₹220 / jar
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SHARE YOUR STORY -->
+<section class="share-section">
+  <div class="share-inner animate-in">
+    <span class="share-emoji">💌</span>
+    <h2 class="share-h2">Already a PIKL Fan?<br>Tell Us Your Story.</h2>
+    <p class="share-desc">Every jar comes with a little story waiting to happen. We'd love to hear yours — whether it's a childhood memory it brought back, a moment it made special, or just a really excellent curd rice evening. Message Narayan directly on WhatsApp.</p>
+    <div class="share-actions">
+      <a href="https://wa.me/919158932320?text=Hi%20Narayan%2C%20I%20want%20to%20share%20my%20PIKL%20story!" class="btn-wa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.9 0C5.35 0 .008 5.34.008 11.9c0 2.098.546 4.07 1.495 5.786L0 24l6.515-1.47A11.86 11.86 0 0 0 11.9 23.8C18.45 23.8 23.8 18.46 23.8 11.9 23.8 5.34 18.45 0 11.9 0zm0 21.8a9.86 9.86 0 0 1-5.031-1.372l-.361-.214-3.736.844.87-3.633-.235-.373A9.837 9.837 0 0 1 1.96 11.9C1.96 6.397 6.396 1.96 11.9 1.96c5.504 0 9.94 4.437 9.94 9.94 0 5.504-4.436 9.9-9.94 9.9z"/></svg>
+        Share My Story
+      </a>
+      <a href="index.html#order" class="btn-outline">🛒 Order Your First Jar</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="order-cta-band">
+  <div class="order-cta-inner">
+    <span class="order-cta-tag">500+ jars. Zero regrets.</span>
+    <h2 class="order-cta-h2">Ready to Write Your Own Review?</h2>
+    <p class="order-cta-desc">Bengaluru's most-loved green chilli pickle. Handcrafted. FSSAI Certified. Personally delivered by Narayan.</p>
+    <div class="order-cta-price">₹220</div>
+    <div class="order-cta-size">per 200g jar · Free delivery across Bengaluru</div>
+    <a href="https://wa.me/919158932320?text=Hi%20Narayan%2C%20I%27d%20like%20to%20order%20PIKL!" class="btn-wa" style="font-size:1rem;padding:16px 36px;display:inline-flex">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.9 0C5.35 0 .008 5.34.008 11.9c0 2.098.546 4.07 1.495 5.786L0 24l6.515-1.47A11.86 11.86 0 0 0 11.9 23.8C18.45 23.8 23.8 18.46 23.8 11.9 23.8 5.34 18.45 0 11.9 0zm0 21.8a9.86 9.86 0 0 1-5.031-1.372l-.361-.214-3.736.844.87-3.633-.235-.373A9.837 9.837 0 0 1 1.96 11.9C1.96 6.397 6.396 1.96 11.9 1.96c5.504 0 9.94 4.437 9.94 9.94 0 5.504-4.436 9.9-9.94 9.9z"/></svg>
+      Order on WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="pikl-footer">
+  <div class="pikl-footer-inner">
+    <div>
+      <div class="pikl-footer-logo">PIKL<span>.</span></div>
+      <p class="pikl-footer-tagline">Premium homemade green chilli pickle, traditionally prepared with mustard, fenugreek &amp; groundnut oil.</p>
+      <div class="pikl-footer-heart-box">
+        <span class="pikl-footer-heart">♥</span>
+        Handcrafted in Bengaluru with love and authentic recipes.
+      </div>
+      <div class="pikl-footer-veg">
+        <span class="pikl-footer-veg-dot"></span> 100% Vegetarian Product
+      </div>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="https://getpikl.in">Home</a></li>
+        <li><a href="https://getpikl.in/pikl-paneer-final">Pikl Paneer</a></li>
+        <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes">Recipes</a></li>
+        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying">Reviews</a></li>
+        <li><a href="https://getpikl.in/blog.html">Journal</a></li>
+      </ul>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="https://wa.me/919158932320">+91 91589 32320</a></li>
+        <li><a href="tel:+919158932320">Call Narayan</a></li>
+        <li>A902, Vaishnavi Nakshatra,<br>Yeshwantpur,<br>Bengaluru 560 022</li>
+      </ul>
+    </div>
+    <div class="pikl-footer-col">
+      <h5>Certifications</h5>
+      <div class="pikl-footer-fssai">✅ FSSAI Licensed</div>
+      <ul>
+        <li style="font-size:0.75rem;">Lic No: 21225008000525</li>
+        <li style="margin-top:8px;font-size:0.75rem;color:rgba(255,255,255,0.45);">Mfd. by: Narayan Mallapur<br>A902, Vaishnavi Nakshatra,<br>Yeshwantpur, Bengaluru 560 022</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pikl-footer-bottom">
+    <span>© 2026 PIKL. All rights reserved.</span>
+    <span>Net Wt: 200g / 7.05 oz &nbsp;·&nbsp; MRP: ₹220 (Incl. of all taxes)</span>
+  </div>
+</footer>
+
+<script>
+// Scroll animation observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.animate-in').forEach(el => observer.observe(el));
+
+// Stagger t-cards
+document.querySelectorAll('.t-card').forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = `opacity 0.55s ${i * 0.055}s ease, transform 0.55s ${i * 0.055}s ease`;
+});
+const cardObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      cardObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.04 });
+document.querySelectorAll('.t-card').forEach(card => cardObs.observe(card));
+
+// Stagger img-t-cards
+document.querySelectorAll('.img-t-card').forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = `opacity 0.5s ${i * 0.08}s ease, transform 0.5s ${i * 0.08}s ease`;
+});
+const imgObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      imgObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.04 });
+document.querySelectorAll('.img-t-card').forEach(card => imgObs.observe(card));
+
+// Stagger video cards
+document.querySelectorAll('.video-card').forEach((card, i) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = `opacity 0.55s ${i * 0.1}s ease, transform 0.55s ${i * 0.1}s ease`;
+});
+const vidObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      vidObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.04 });
+document.querySelectorAll('.video-card').forEach(card => vidObs.observe(card));
+</script>
+</body>
+</html>
