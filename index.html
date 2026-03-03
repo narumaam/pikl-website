@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -980,6 +981,19 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
   font-size: 0.75rem; color: rgba(255,255,255,0.35);
   flex-wrap: wrap; gap: 8px;
 }
+.pikl-footer-insta {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0 20px; max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.8rem;
+}
+.pikl-footer-insta a {
+  color: rgba(255,255,255,0.55); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  transition: color 0.2s;
+}
+.pikl-footer-insta a:hover { color: #E8840A; }
+.pikl-footer-insta-divider { color: rgba(255,255,255,0.2); }
 @media (max-width: 900px) {
   .pikl-footer-inner { grid-template-columns: 1fr 1fr; gap: 36px; }
 }
@@ -997,10 +1011,9 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
     <a href="https://getpikl.in" class="pikl-nav-logo">PIKL<span>.</span></a>
     <div class="pikl-nav-links">
       <a href="https://getpikl.in" class="pikl-nav-link active">Home</a>
-      <a href="https://getpikl.in/pikl-paneer-final" class="pikl-nav-link">Pikl Paneer</a>
       <a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes" class="pikl-nav-link">Recipes</a>
-      <a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" class="pikl-nav-link">Reviews</a>
-      <a href="https://getpikl.in/blog.html" class="pikl-nav-link">Journal</a>
+      <a href="https://getpikl.in/testimonials" class="pikl-nav-link">Testimonials</a>
+      <a href="https://getpikl.in/blog" class="pikl-nav-link">Blog</a>
     </div>
     <div class="pikl-nav-right">
       <span class="pikl-nav-tag">ಬೆಂಗಳೂರಿನಲ್ಲಿ ಕರಕುಶಲ ವಸ್ತುಗಳು</span>
@@ -1229,13 +1242,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
       </div>
     </div>
 
-    <!-- Paneer page CTA -->
-    <div style="text-align:center; margin: 32px 0 8px;">
-      <a href="pikl-paneer-final.html" style="display:inline-block; background:#16a34a; color:#fff; font-weight:700; font-size:1rem; padding:14px 32px; border-radius:50px; text-decoration:none; letter-spacing:0.5px; box-shadow:0 4px 16px rgba(22,163,74,0.18);">
-        🧀 Discover PIKL Masala Paneer →
-      </a>
-      <p style="color:#6b7280; font-size:0.85rem; margin-top:10px;">Freshly set, spice-infused artisanal paneer — made only after your order.</p>
-    </div>
+
 
     <!-- Heat scale -->
     <div class="heat-section">
@@ -1385,7 +1392,7 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
       </div>
     </div>
     <div style="text-align:center;margin-top:40px;">
-      <a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying" class="btn-green" style="display:inline-flex;align-items:center;gap:8px;font-size:0.95rem;padding:14px 32px;">
+      <a href="https://getpikl.in/testimonials" class="btn-green" style="display:inline-flex;align-items:center;gap:8px;font-size:0.95rem;padding:14px 32px;">
         More Testimonials
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
@@ -1652,10 +1659,9 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
       <h5>Navigate</h5>
       <ul>
         <li><a href="https://getpikl.in">Home</a></li>
-        <li><a href="https://getpikl.in/pikl-paneer-final">Pikl Paneer</a></li>
         <li><a href="https://getpikl.in/PIKL-Green-Chilli-Pickle-Recipes">Recipes</a></li>
-        <li><a href="https://getpikl.in/PIKL-What-Our-Customers-Are-Saying">Reviews</a></li>
-        <li><a href="https://getpikl.in/blog.html">Journal</a></li>
+        <li><a href="https://getpikl.in/testimonials">Testimonials</a></li>
+        <li><a href="https://getpikl.in/blog">Blog</a></li>
       </ul>
     </div>
     <div class="pikl-footer-col">
@@ -1678,6 +1684,14 @@ footer { background: var(--bg-dark); color: rgba(255,255,255,0.9); padding: 60px
   <div class="pikl-footer-bottom">
     <span>© 2026 PIKL. All rights reserved.</span>
     <span>Net Wt: 200g / 7.05 oz &nbsp;·&nbsp; MRP: ₹220 (Incl. of all taxes)</span>
+  </div>
+  <div class="pikl-footer-insta">
+    <a href="https://instagram.com/getpikl.in" target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      @getpikl.in
+    </a>
+    <span class="pikl-footer-insta-divider">·</span>
+    <a href="https://www.getpikl.in" target="_blank" rel="noopener noreferrer">www.getpikl.in</a>
   </div>
 </footer>
 
